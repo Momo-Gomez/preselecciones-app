@@ -9,21 +9,29 @@ import Topbar from './components/Layouts/TopBar/topbar'   //SE IMPORTA LA TOPBAR
 //RUTAS
 
 import Home  from './views/Home/home';   //SE IMPORTA HOME.JS DE VISTAS
+import Signin from './views/users/signin/signin' //SE IMPORTA SIGNIN.JS DE VISTAS
 
 
 function App() {
   return (
     <Fragment>
-      <Router>
-        <Topbar />
-        <Routes>
-
-          <Route path= "/" element={<Home />}> </ Route>        {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
+      <div className='container'>
+        <Router>
+          <div className='mb-3'>
+            <Topbar />
+          </div>
           
+          <Routes>
 
-        </Routes>
+            <Route path= "/" element={<Home />}> </ Route>        {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
+            <Route path= "/usuario/login" element = { <Signin /> }> </Route>    {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN */}
+            
 
-      </Router>
+          </Routes>
+
+        </Router>
+      </div>
+      
       
         
       
