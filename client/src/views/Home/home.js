@@ -3,8 +3,9 @@ import React,{Fragment} from "react";
 
 const home = () => {
     return(
-        <div>
-            <p> Probando asda</p>
+        <div className="container">
+            <p> probando </p>
+            
         </div>
     );
 }
