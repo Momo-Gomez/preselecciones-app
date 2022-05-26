@@ -10,6 +10,7 @@ const signin = () => {
 export default function Login() {
     return(
         <div className="signin">
+            <span className="signin-title">Ingreso</span>
             <form className="signin-form">
 
                 <label>RUT</label>
