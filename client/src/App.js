@@ -17,14 +17,14 @@ function App() {
     <Fragment>
       <div className='container'>
         <Router>
-          <div className='mb-3'>
+          <div>
             <Topbar />
           </div>
           
           <Routes>
 
             <Route path= "/" element={<Home />}> </ Route>        {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
-            <Route path= "/usuario/login" element = { <Signin /> }> </Route>    {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN */}
+            <Route path= "/usuario/login" element = { <Signin /> }> </Route>    {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             
 
           </Routes>
