@@ -1,1 +1,11 @@
 .vscode/settings.json
+server/package.json
+server/package-lock.json
+server/.eslintrc.js
+client/src/views/Home/home.js
+package.json
+package-lock.json
+server/package-lock.json
+server/package.json
+server/package-lock.json
+server/package.json
