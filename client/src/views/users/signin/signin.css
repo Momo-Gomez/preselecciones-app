@@ -7,10 +7,11 @@
     justify-content: center;
     background: linear-gradient(
         rgba(255,255,255,0.5),
-        rgba(255,255,255,0.5)
+        rgba(0, 0, 0, 0.5)
     ), 
     url("apartament.jpg");
-    background-size: cover;
+    background-size: contain;
+    padding: 20px;
 }
 
 /*  Título  */
