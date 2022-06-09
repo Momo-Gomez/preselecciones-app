@@ -10,6 +10,7 @@ import Topbar from "./components/Layouts/TopBar/topbar"; //SE IMPORTA LA TOPBAR 
 
 import Home from "./views/Home/home"; //SE IMPORTA HOME.JS DE VISTAS
 import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS DE VISTAS
+import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS DE
 
 function App() {
   return (
@@ -27,8 +28,13 @@ function App() {
             {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
             <Route path="/usuario/login" element={<Signin />}>
               {" "}
-            </Route>{" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
+            </Route>{" "}
+            <Route path= "/subsidio" element={<Subsidio />}>
+              {" "}
+            {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
+            </Route>{" "}
+            
           </Routes>
         </Router>
       </div>
