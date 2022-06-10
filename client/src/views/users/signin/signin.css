@@ -45,7 +45,6 @@
 .sign-button {
     margin-top: 20px;
     cursor: pointer;
-    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -54,6 +53,5 @@
     color: white;
     border-radius: 10px;
     padding: 10px;
-    width: 15%;
     text-align: center;
 }
