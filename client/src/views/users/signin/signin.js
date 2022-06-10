@@ -7,8 +7,8 @@ const signin = () => {
 export default function Login() {
   return (
     <div className="container">
-      <div class="card mb-5">
-        <div className="signin">
+      <div className="signin">
+        <div class="card mb-5">
           <span className="signin-title">Ingreso</span>
           <form className="signin-form">
             <label>RUT</label>
