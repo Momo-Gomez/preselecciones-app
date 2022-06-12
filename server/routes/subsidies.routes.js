@@ -1,9 +1,12 @@
-const {Router} = require ("express")
+const { Router } = require("express");
 const router = Router();
-const {getSubsidies} = require("../controllers/subsidies.controller");
+const {
+  getSubsidies,
+  getSubsidiesByid,
+} = require("../controllers/subsidies.controller");
 
-router.get("/beneficios",getSubsidies);
+router.get("/api/beneficios", getSubsidies);
 
-router.get("/beneficios/:idbeneficio",getSubsidiesByid);
+router.get("/api/beneficios/:idbeneficio", getSubsidiesByid);
 
-module.exports = router
+module.exports = router;

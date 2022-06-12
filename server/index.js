@@ -9,7 +9,6 @@ require("./database");
 //Settings
 app.set("port", process.env.PORT || 5000);
 app.set("views", path.join(__dirname, "views"));
-console.log(path.join(__dirname, "views"));
 
 //Middleware
 app.use(express.urlencoded({ extended: false })); //acepta mas que strings formularios
@@ -24,6 +23,7 @@ app.use((err, req, res, next) => {
 
 //Routes
 app.use(require("./routes/subsidies.routes"));
+app.use(require("./routes/user.routes"));
 
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
