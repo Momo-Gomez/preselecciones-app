@@ -6,8 +6,8 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(
-        rgba(255,255,255,0.5),
-        rgba(0, 0, 0, 0.5)
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0.3)
     ), 
     url("apartament.jpg");
     background-size: contain;
@@ -17,6 +17,15 @@
 /*  Título  */
 .signin-title{
     font-size: 50px;
+}
+
+/*  Tarjeta  */
+.card{
+    padding: 20px 50px;
+    background: linear-gradient(
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0.8)
+    )
 }
 
 /*  Forma  */
