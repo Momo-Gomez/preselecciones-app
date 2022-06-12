@@ -26,11 +26,11 @@ function App() {
               {" "}
             </Route>{" "}
             {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
-            <Route path="/usuario/login" element={<Signin />}>
+            <Route path="/usuario/ingreso" element={<Signin />}>
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             </Route>{" "}
-            <Route path= "/subsidio" element={<Subsidio />}>
+            <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
             {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
             </Route>{" "}
