@@ -1,2 +1,3 @@
-.vscode/preselecciones-app.code-workspace
-client/package.json
+# dependencies
+client/node_modules
+server/node_modules
