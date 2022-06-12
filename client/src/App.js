@@ -7,10 +7,11 @@ import Header from "./components/Layouts/Header/header"; //SE IMPORTA EL HEADER 
 import Topbar from "./components/Layouts/TopBar/topbar"; //SE IMPORTA LA TOPBAR FIJA
 
 //RUTAS
-
-import Home from "./views/Home/home"; //SE IMPORTA HOME.JS DE VISTAS
-import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS DE VISTAS
-import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS DE
+      //VISTAS
+import Home from "./views/Home/home"; //SE IMPORTA HOME.JS
+import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS
+import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
+import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             </Route>{" "}
+            <Route path="/usuario/registro" element={<Signup />}>
+              {" "}
+            {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNIN.JS */}
+            </Route>
             <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
             {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
