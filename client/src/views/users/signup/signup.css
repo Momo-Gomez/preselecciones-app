@@ -9,7 +9,7 @@
         rgba(255,255,255,0.3)
     ),
     url("living-room.jpg");
-    background-size: contain;
+    background-size: cover;
 }
 
 /*  Título  */
@@ -24,4 +24,30 @@
         rgba(255,255,255,0.8),
         rgba(255,255,255,0.8)
     )
+}
+
+/*  Forma  */
+.signup-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Titulo de label  */
+.signup-form >label {
+    margin: 10px 0;
+    font-weight: bold;
+    display: block;
+}
+
+/*  Botón  */
+.submit-button{
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #51A1E2;
+    color: white;
+    text-align: center;
 }

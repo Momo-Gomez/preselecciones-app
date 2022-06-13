@@ -22,8 +22,8 @@
 .card{
     padding: 20px 50px;
     background: linear-gradient(
-        rgba(255,255,255,0.8),
-        rgba(255,255,255,0.8),
+        rgba(255,255,255,1),
+        rgba(255,255,255,1),
     );
 }
 
@@ -41,14 +41,6 @@
     display: block;
 }
 
-/*  Input label  */
-.signin-input {
-    width: 100%;
-    padding: 20px;
-    border: none;
-    border-radius: 10px;
-}
-
 /*  Botón  */
 .sign-button {
     margin-top: 20px;
@@ -57,9 +49,6 @@
     text-transform: uppercase;
     font-weight: bold;
     background-color: #51A1E2;
-    border: none;
     color: white;
-    border-radius: 10px;
-    padding: 10px;
     text-align: center;
 }

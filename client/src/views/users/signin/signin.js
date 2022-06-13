@@ -25,18 +25,20 @@ export default function Login() {
               placeholder="Contraseña"
             />
           </form>
-          <button
-            type="submit"
-            className="sign-button btn btn-primary
+          <div className="text-left">
+            <button
+              type="submit"
+              className="sign-button btn btn-primary
                                             border border-white border-opacity-25
                                             btn-gorup
                                             mt-4 me-4
                                             shadow rounded-pill"
-          >
-            {" "}
-            {/*Parámetros de diseño en bootstrap para el boton */}
-            Ingresar
-          </button>
+            >
+              {" "}
+              {/*Parámetros de diseño en bootstrap para el boton */}
+              Ingresar
+            </button>
+          </div>
         </div>
       </div>
     </div>
