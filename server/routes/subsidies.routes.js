@@ -5,7 +5,7 @@ const {
   getSubsidiesByid,
 } = require("../controllers/subsidies.controller");
 
-router.get("/api/beneficios", getSubsidies);
+router.get("/api/beneficios/lista", getSubsidies);
 
 router.get("/api/beneficios/:idbeneficio", getSubsidiesByid);
 
