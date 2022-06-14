@@ -1,3 +1,7 @@
+Formato de contraseñas:
+    > Debe contener más de 4 carácteres y menos de 10
+    > Al menos debe tener una mayúscula y un número
+
 
 # Entorno para linux
 
@@ -72,3 +76,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

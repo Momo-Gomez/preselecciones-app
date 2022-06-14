@@ -18,11 +18,12 @@
 }
 
 /*  Tajeta  */
-.card{
+.signup-card{
+    width: 500px;
     padding: 20px 50px;
     background: linear-gradient(
-        rgba(255,255,255,0.8),
-        rgba(255,255,255,0.8)
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0.9)
     )
 }
 
@@ -33,11 +34,26 @@
     flex-direction: column;
 }
 
+.digit {
+    width: 50px;
+}
+
 /*  Titulo de label  */
 .signup-form >label {
     margin: 10px 0;
     font-weight: bold;
     display: block;
+}
+
+/*  Validación de los inputs  */
+input:invalid {
+    animation: shake 300ms
+}
+
+@keyframes shake {
+    25% {  transform: translateX(4px);  }
+    50% {  transform: translateX(-4px); }
+    75% {  transform: translateX(4px);  }
 }
 
 /*  Botón  */
