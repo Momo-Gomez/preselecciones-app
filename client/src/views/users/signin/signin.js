@@ -12,7 +12,7 @@ export default function Login() {
     <div className="container">
       <div className="signin">
         {/* Tarjeta  */}
-        <div className="card mt-3">
+        <div className="signin-card card mt-3">
           <span className="signin-title text-center">Ingreso</span>
           <form className="signin-form">
             <label>RUT</label>

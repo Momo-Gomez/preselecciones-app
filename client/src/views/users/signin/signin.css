@@ -15,29 +15,27 @@
 
 /*  Título  */
 .signin-title{
+    margin-top: 20px;
     font-size: 40px;
 }
 
 /*  Tarjeta  */
-.card{
+.signin-card {
+    width: 500px;
     padding: 20px 50px;
-    background: linear-gradient(
-        rgba(255,255,255,1),
-        rgba(255,255,255,1),
-    );
+    background-color: white;
 }
 
 /*  Forma  */
 .signin-form{
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /*  Titulo de label  */
 .signin-form > label {
     margin: 10px 0;
     font-weight: bold;
+    color: #51A1E2;
     display: block;
 }
 

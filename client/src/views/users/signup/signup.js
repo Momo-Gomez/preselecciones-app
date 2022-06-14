@@ -5,21 +5,20 @@ export default function signup() {
     <div className="container">
       <div className="signup">
         {/*  Tarjeta  */}
-        <div className="card mt-3 signup-card">
+        <div className="signup-card card mt-3">
           <span className="signup-title text-center">Registro</span>
           <form className="signup-form">
             {/* Información solicitada al cliente */}
             {/*--- PRIMER NOMBRE ---*/}
-            <label for="f-name">Primer Nombre</label>
-            <input 
-              id="f-name"
+            <label>Primer Nombre</label>
+            <input
               type="text" pattern="[A-Za-z]*"
-              className="styl"
+              className="form-control"
               placeholder="Alex"
             />
 
             {/*--- SEGUNDO NOMBRE ---*/}
-            <label for= "s-name">Segundo Nombre</label>
+            <label>Segundo Nombre</label>
             <input 
               id="s-name"
               type="text" pattern="[A-Za-z]*"
