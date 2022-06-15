@@ -11,10 +11,13 @@
 :root {
   /*  PALETA DE COLORES  */
   --color-bg: #1f1f38;
-  --color-bg-variant: #2c2c6c;
-  --color-primary: #4db5ff;
-  --color-primary-variant: rgba(77,181,255,0.4);
-  --color-white: #00000;
+  --color-bg-variant: #3f3351;
+  --color-primary: #5c527f;
+  --color-primary-variant: rgba(92,82,127,0.4);
+  --color-secondary: #b97a95;
+  --color-secondary-variant: #b6cdf7;
+  --color-black: #000000;
+  --color-white: #ffffff;
   --color-light: rgba(255,255,255,0.6);
 
   --transition: all 400ms ease;
@@ -65,7 +68,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 section {
@@ -108,7 +111,7 @@ a:hover {
 }
 
 .btn:hover {
-  background: var(--color-white);
+  background: var(--color-light);
   color: var(--color-bg);
   border-color: transparent;
 }

@@ -1,0 +1,22 @@
+.text-search {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    transform: skew(-6deg);
+    color: var(--color-secondary);
+
+    text-shadow: 
+        var(--color-bg-variant) 3px 3px
+}
+
+.search-bar {
+    min-width: 600px;
+
+    width: 100%;
+    height: 12rem;
+
+    position: absolute;
+    left: 0;
+  
+    background: var(--color-secondary-variant);
+}
+  
