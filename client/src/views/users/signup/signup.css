@@ -7,7 +7,9 @@
     background: linear-gradient(
         rgba(255,255,255,0.3),
         rgba(255,255,255,0.3)
-    );
+    ),
+    url("living-room.jpg");
+    background-size: contain;
 }
 
 /*  Título  */
@@ -20,33 +22,12 @@
 .signup-card{
     width: 500px;
     padding: 20px 50px;
-    background: linear-gradient(
-        rgba(255,255,255,0.9),
-        rgba(255,255,255,0.9)
-    )
+    background-color: white;
 }
 
 /*  Forma  */
 .signup-form{
     margin-top: 50px;
-}
-label{
-    font-size: 17px;
-    -webkit-transition: top .2s ease-in-out, font-size .2s ease-in-out;
-    transition: top .2s ease-in-out, font-size .2s ease-in-out;
-}
-.active {
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: 6px;
-}
-input[type=text] {
-    width: 100%;
-    font-size: 17px;
-
-}
-input:[type=text]:focus {
-    outline: none;
 }
 input::placeholder {
     transition: opacity .25s;
