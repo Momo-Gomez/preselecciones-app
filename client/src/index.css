@@ -22,7 +22,7 @@
   /*  TAMAÑO DE CONTENEDORES  */
   --container-width-lg: 96%;
   --container-width-md: 86%;
-  --container-width-ms: 85%;
+  --container-width-ms: 75%;
 }
 
 html {
@@ -56,7 +56,7 @@ code {
 
 /*    ESTILOS GENERALES  */
 .container {
-  width: var(--container-width-lg);
+  width:100%;
   margin: 0 auto;
 }
 

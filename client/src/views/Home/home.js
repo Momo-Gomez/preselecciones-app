@@ -1,16 +1,12 @@
 import React, { Fragment } from "react";
+import Header from "../../components/Layouts/Header/header";
 import "./home.css";
-
-const imag = "familiaCasa.jpg"; //Se importa la img en una variable ya que es publica
 
 const home = () => {
   return (
     <div className="container">
       <div className="text-center">
-        <div className="border-top border-danger border-5">
-          <img src={imag} height="544"></img>{" "}
-          {/*Se llama a la img desde el src puesto en la variable*/}
-        </div>
+        <Header/>
         <div className="SearchBarBG">
           <div className="container">
             <h1 className="fw-semibold"> Busca Aquí tu Beneficio </h1>
