@@ -10,7 +10,7 @@ const subsidio = () => {
             <h2 className="text-primary  p-3 ">Lista de Beneficios</h2>
 
             
-            <div class="card mb-5 shadow p-3 bg-body rounded">
+            <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary ">DS-27 Reparaciones de todo tipo</h5>
                 <div class="card-body">
                     <h5 class="card-title">Mejoramiento de la vivienda</h5>
@@ -25,7 +25,7 @@ const subsidio = () => {
              
             
         
-            <div class="card mb-5 shadow p-3 bg-body rounded">
+            <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary">DS-10 Viviendas Rurales</h5>
                 <div class="card-body">
                     <p class="card-text">Este subsidio del Estado permite construir una vivienda en el terreno donde vive la familia interesada y se puede postular de manera individual o colectiva.</p>
@@ -35,7 +35,7 @@ const subsidio = () => {
                 </div>
             </div>
                
-            <div class="card mb-5 shadow p-3 bg-body rounded">
+            <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary">DS-01 Vivienda rural (Sitio propio)</h5>
                 <div class="card-body">
                     <p class="card-text">Aqui te dan re muchas custiones</p>
@@ -45,7 +45,7 @@ const subsidio = () => {
                 </div>
             </div> 
             
-            <div class="card mb-5 shadow p-3 bg-body rounded">
+            <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary">DS-49 Vivienda Espacio urbano</h5>
                 <div class="card-body">
                     <p class="card-text">Este apoyo del Estado permite construir una vivienda o un conjunto de ellas (casas o departamentos) sin crédito hipotecario en sectores urbanos o rurales</p>
