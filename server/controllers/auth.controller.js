@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 //función para registrar un nuevo usuario
 const register = async (req, res) => {
   try {
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(10); 
     const errors = [];
     const {
       rut,
@@ -16,6 +16,7 @@ const register = async (req, res) => {
       apellidom,
       rcontrasena,
     } = req.body;
+  
     if (contrasena != rcontrasena) {
       errors.push({ text: "Contraseñas no coinciden" });
     }

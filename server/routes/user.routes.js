@@ -6,7 +6,7 @@ const {
 //REGISTRO
 router.post("/api/usuario/registro", register);
 //INGRESO
-router.post("/api/usuario/ingreso", signin);
+//router.post("/api/usuario/ingreso", signin);
 
 
 
