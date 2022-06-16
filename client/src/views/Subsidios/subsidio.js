@@ -38,7 +38,7 @@ const subsidio = () => {
             <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary">DS-01 Vivienda rural (Sitio propio)</h5>
                 <div class="card-body">
-                    <p class="card-text">Aqui te dan re muchas custiones</p>
+                    <p class="card-text">Este apoyo del Estado permite a las familias que no son dueñas de una vivienda y tienen capacidad de ahorro, construir una vivienda de hasta 140 m2 en un sitio propio o en un terreno donde ya existe otra vivienda.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-primary me-md-2" type="button">+ Info</button>
                     </div>
@@ -48,7 +48,7 @@ const subsidio = () => {
             <div class="card mb-5 shadow bg-body rounded">
                 <h5 class="card-header text-bg-primary">DS-49 Vivienda Espacio urbano</h5>
                 <div class="card-body">
-                    <p class="card-text">Este apoyo del Estado permite construir una vivienda o un conjunto de ellas (casas o departamentos) sin crédito hipotecario en sectores urbanos o rurales</p>
+                    <p class="card-text">Este apoyo del Estado permite construir una vivienda o un conjunto de ellas (casas o departamentos) sin crédito hipotecario en sectores urbanos o rurales.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-primary me-md-2" type="button">+ Info</button>
                     </div>

@@ -12,6 +12,7 @@ import Home from "./views/Home/home"; //SE IMPORTA HOME.JS
 import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS
 import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
 import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS
+import DS27 from "./views/Subsidios/DS27/DS27"; //SE IMPORTA DS27.JS
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
             <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
             {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
+            </Route>{" "}
+            <Route path= "/subsidios/DS27" element={<DS27 />}>
+              {" "}
+            {/*LLAMANDO A LA RUTA Subsidios/DS-27/DS-27 DESDE EL HOME.JS */}
             </Route>{" "}
             
           </Routes>
