@@ -1,12 +1,12 @@
 const pool = require("../database");
-const {validarut} = require("./auth.controller")
+const {validaRut,validaContra,validaLargoMax,validaLargoMin} = require("./auth.controller")
 const bcrypt = require("bcrypt");
 
 //función para registrar un nuevo usuario
 const register = async (req, res) => {
   try {
-    const salt = await bcrypt.genSalt(10); 
     const errors = [];
+    const salt = await bcrypt.genSalt(10); 
     const {
       rut,
       dv,
@@ -17,26 +17,15 @@ const register = async (req, res) => {
       apellidom,
       rcontrasena,
     } = req.body;
-  
-    validarut(rut,dv,errors);
-    if (contrasena != rcontrasena) {
-      errors.push({ text: "Contraseñas no coinciden" });
-    }
-    if (contrasena.length < 4) {
-      errors.push({
-        text: "Contraseña demasiado corta, intente con mas de 4 caracteres",
-      });
-    }
-    if (contrasena.length > 10) {
-      errors.push({
-        text: "Contraseña demasiado larga, intente con menos de 11 caracteres",
-      });
-    }
+    //validaciones
+    errors.push(validaRut(rut,dv,));
+    errors.push(validaContra(contrasena,rcontrasena));
+    errors.push(validaLargoMax(contrasena));
+    errors.push(validaLargoMin(contrasena));
     if (errors.length > 0) {
       throw errors;
     }
     const hashedPass = await bcrypt.hash(contrasena, salt);
-    console.log(hashedPass.length);
     const response = await pool.query(
       "INSERT INTO usuario (rut,dv,contrasena,pnombre,snombre,apellidop,apellidom) VALUES ($1,$2,$3,$4,$5,$6,$7)",
       [rut, dv, hashedPass, pnombre, snombre, apellidop, apellidom]
