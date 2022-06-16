@@ -1,0 +1,28 @@
+.about-tittle {
+    position: static;
+}
+
+.about__container {
+    display: grid;
+    grid-template-columns: 30% 50%;
+    gap: 10%;
+}
+  
+.about__list {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, transparent, var(--color-primary),transparent);
+    display: grid;
+    place-items: center; }
+  
+.about__list-img {
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transition);
+}
+  
+.about__list-img:hover {
+    transform: rotate(0deg);
+}

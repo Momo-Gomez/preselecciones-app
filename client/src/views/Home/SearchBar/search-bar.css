@@ -5,18 +5,21 @@
     color: var(--color-secondary);
 
     text-shadow: 
-        var(--color-bg-variant) 3px 3px
+        var(--color-bg-variant) 3px 3px;
+    
+}
+
+.input-group {
+    padding-bottom: 2rem;
 }
 
 .search-bar {
-    min-width: 600px;
-
     width: 100%;
-    height: 12rem;
+    height: auto;
+    z-index: 5;
 
     position: absolute;
     left: 0;
   
     background: var(--color-secondary-variant);
 }
-  

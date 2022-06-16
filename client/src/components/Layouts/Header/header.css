@@ -11,14 +11,10 @@ header {
 
 /*  imagen de pareja*/
 .couple {
-    min-height: 100%;
-    min-width: 600px;
-
     width: 100%;
     height: auto;
 
-    position: flex;
-    top: 7rem;
+    position: absolute;
     left: 0;
 }
 
