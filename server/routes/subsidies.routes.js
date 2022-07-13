@@ -7,6 +7,4 @@ const {
 
 router.get("/api/beneficios/lista", getSubsidies);
 
-router.get("/api/beneficios/:idbeneficio", getSubsidiesByid);
-
 module.exports = router;
