@@ -1,33 +1,28 @@
 /*  Diseño Base  */
 .signup{
-    height: calc(100vh - 50px);
+    height: calc(100vh - 3rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(
-        rgba(255,255,255,0.3),
-        rgba(255,255,255,0.3)
-    ),
-    url("living-room.jpg");
-    background-size: contain;
 }
 
 /*  Título  */
 .signup-title{
-    margin-top: 20px;
+    margin-top: 1rem;
     font-size: 40px;
+    color: var(--color-bg);
 }
 
 /*  Tajeta  */
 .signup-card{
-    width: 500px;
-    padding: 20px 50px;
-    background-color: white;
+    width: 30rem;
+    padding: 1rem 3rem;
+    background-color: var(--color-secondary-variant);
 }
 
 /*  Forma  */
 .signup-form{
-    margin-top: 50px;
+    margin-top: 1rem;
 }
 input::placeholder {
     transition: opacity .25s;
@@ -37,14 +32,14 @@ input:focus::placeholder {
 }
 
 .digit {
-    width: 50px;
+    width: 3rem;
 }
 
 /*  Titulo de label  */
 .signup-form >label {
     margin: 10px 0;
     font-weight: bold;
-    color: #51A1E2;
+    color: var(--color-primary);
     display: block;
 }
 
@@ -60,13 +55,7 @@ input:invalid {
 }
 
 /*  Botón  */
-.submit-button{
-    margin-top: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: #51A1E2;
-    color: white;
+.submit-btn{
+    margin-top: 2rem;
     text-align: center;
 }
