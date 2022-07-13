@@ -1,16 +1,25 @@
 import "./topbar.css";
+import { useNavigate } from "react-router-dom";
 
-const topbar = () => {
+const Topbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <div className="topback">
         <div className='buttons'>
-                  <a href='#' className='btn'>Ingresar</a>
-                  <a href='#' className='btn btn-primary'>Registro</a>
+                  <button onClick={() => navigate('/usuario/ingreso', { replace: true })} href='#' className='btn'>
+                  Ingresar
+                  </button>
+                  <button onClick={() => navigate('/usuario/registro')} href='#' className='btn btn-primary'>
+                  Registro
+                  </button>
+                 
               </div>
         </div>
     </div>
   );
 };
 
-export default topbar;
+export default Topbar;
