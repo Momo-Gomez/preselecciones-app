@@ -5,6 +5,7 @@ export default function signup() {
   return (
     <div className="container">
       <div className="signup">
+        <h1 class="text-center p-5"></h1>
         {/*  Tarjeta  */}
         <div className="signup-card card mt-3">
           <span className="signup-title text-center">Registro</span>
