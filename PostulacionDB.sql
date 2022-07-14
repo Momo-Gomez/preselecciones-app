@@ -42,20 +42,6 @@ CREATE TABLE public.comuna (
 );
 
 
--- public.formulariobeneficio definition
-
--- Drop table
-
--- DROP TABLE public.formulariobeneficio;
-
-CREATE TABLE public.formulariobeneficio (
-	idformulario int4 NOT NULL,
-	idbeneficio varchar(10) NOT NULL,
-	admisibilidad bool NULL,
-	CONSTRAINT formulariobeneficio_pkey PRIMARY KEY (idformulario, idbeneficio)
-);
-
-
 -- public.usuario definition
 
 -- Drop table
@@ -107,6 +93,22 @@ CREATE TABLE public.formulario (
 	CONSTRAINT formulario_pkey PRIMARY KEY (idformulario),
 	CONSTRAINT formulario_correo_fkey FOREIGN KEY (correo) REFERENCES public.administrador(correo),
 	CONSTRAINT formulario_rut_fkey FOREIGN KEY (rut) REFERENCES public.usuario(rut)
+);
+
+
+-- public.formulariobeneficio definition
+
+-- Drop table
+
+-- DROP TABLE public.formulariobeneficio;
+
+CREATE TABLE public.formulariobeneficio (
+	idformulario int4 NOT NULL,
+	idbeneficio varchar(10) NOT NULL,
+	admisibilidad bool NULL,
+	CONSTRAINT formulariobeneficio_pkey PRIMARY KEY (idformulario, idbeneficio),
+	CONSTRAINT formulariobeneficio_idbeneficio_fkey FOREIGN KEY (idbeneficio) REFERENCES public.beneficio(idbeneficio),
+	CONSTRAINT formulariobeneficio_idformulario_fkey FOREIGN KEY (idformulario) REFERENCES public.formulario(idformulario)
 );
 
 

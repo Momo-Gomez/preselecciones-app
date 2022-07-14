@@ -11,8 +11,8 @@ import Topbar from "./components/Layouts/TopBar/topbar"; //SE IMPORTA LA TOPBAR 
 import Home from "./views/Home/home"; //SE IMPORTA HOME.JS
 import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS
 import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
-import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS
-import DS27 from "./views/Subsidios/DS27/DS27"; //SE IMPORTA DS27.JS
+import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA SUBSIDIO.JS
+import Formulario from "./views/Formulario/formulario"; //SE IMPORTA FORMULARIO.JS
 
 function App() {
   return (
@@ -34,15 +34,15 @@ function App() {
             </Route>{" "}
             <Route path="/usuario/registro" element={<Signup />}>
               {" "}
-            {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNIN.JS */}
+            {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNUP.JS */}
             </Route>
             <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
-            {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
+            {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL SUBSIDIO.JS */}
             </Route>{" "}
-            <Route path= "/subsidios/DS27" element={<DS27 />}>
+            <Route path="/subsidios/formulario" element={<Formulario />}>
               {" "}
-            {/*LLAMANDO A LA RUTA Subsidios/DS-27/DS-27 DESDE EL HOME.JS */}
+            {/*LLAMANDO A LA RUTA SUBSIDIOS/FORMULARIO DESDE EL FORMULARIO.JS */}
             </Route>{" "}
             
           </Routes>

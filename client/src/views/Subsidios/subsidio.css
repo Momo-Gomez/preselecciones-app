@@ -7,6 +7,13 @@
 .card-header {
   width: 100%;
   height: auto;
+  background-color: var(--color-primary-variant);
 
   position: cover;
 }
+
+.card-body {
+  background-color: var(--color-secondary-variant);
+  color: var(--color-bg);
+}
+

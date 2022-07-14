@@ -26,18 +26,9 @@ export default function Login() {
             />
           </form>
           <div className="text-left">
-            <button
-              type="submit"
-              className="sign-button btn btn-primary
-                                            border border-white border-opacity-25
-                                            btn-gorup
-                                            mt-4 me-4
-                                            shadow rounded-pill"
-            >
-              {" "}
-              {/*Parámetros de diseño en bootstrap para el boton */}
-              Ingresar
-            </button>
+            <div className="signin-btn">
+              <a href="#" className="btn btn-primary">Ingresar</a>
+            </div>
           </div>
         </div>
       </div>

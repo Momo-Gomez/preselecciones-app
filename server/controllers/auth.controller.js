@@ -1,25 +1,28 @@
-//VALIDACION RUT
-const validarut = async (rut, digv, errors) => {
+/**
+ * 
+ * @param {*} rut 
+ * @param {*} digv 
+ * @returns tiene que ser cambiados por algo que nos sirva para después 
+ */
+
+//VALIDACIÓN RUT
+const validaRut = (rut, digv) => {
   try {
     var rutdv = rut + "-" + digv;
     if (!/^[0-9]+-[0-9kK]{1}$/.test(rutdv)) {
-      errors.push({
-        text: "El rut no cumple formato",
-      });
-      return false;
+      return "El rut no cumple formato";
     }
-    //if (digv == "K") digv = "k";
-    if (digitoV(rut, errors) != digv) {
-      errors.push("dígito incorrecto");
-      return false;
-    }
-    return true;
-  } catch (error) {
-    res.status(500).json(error);
-  }
+    if (digv == "K") digv = "k";
+
+    if (digitoV(rut) != digv) {
+      return "dígito incorrecto"
+    };
+} catch (error) {
+  console.log("algo anda mal rut " + error);
+}
 };
-//VALIDACION DIGITO VERIFICADOR
-const digitoV = (rut, errors) => {
+//VALIDACIÓN DÍGITO VERIFICADOR LLAMADO POR EL VERIFICADOR DE RUT
+const digitoV = (rut) => {
   try {
     var M = 0,
       S = 1;
@@ -28,10 +31,45 @@ const digitoV = (rut, errors) => {
     }
     return S ? S - 1 : "K";
   } catch (error) {
-    res.status(500).json(error);
+    console.log("algo anda mal dv " + error);
+  }
+};
+// VALIDACIÓN CONTRASEÑAS IGUALE
+const validaContra = (contrasena, rcontrasena) => {
+  try {
+    if (contrasena != rcontrasena) {
+      return "Contraseñas no coinciden";
+    }
+    return true;
+  } catch (error) {
+    console.log("algo anda mal iguales" + error);
+  }
+};
+//VALIDACIÓN LARGO MÍNIMO DE LA CONTRASEÑA
+const validaLargoMin = (contrasena) => {
+  try {
+    if (contrasena.length < 4) {
+     return "Contraseña demasiado corta, intente con mas de 4 caracteres";
+    }
+
+  } catch (error) {
+    console.log("algo anda mal min" + error);
+  }
+};
+//VALIDACIÓN LARGO MÁXIMO DE LA CONTRASEÑA
+const validaLargoMax = (contrasena) => {
+  try {
+    if (contrasena.length > 10) {
+      return "Contraseña demasiado larga, intente con menos de 11 caracteres";
+    }
+  } catch (error) {
+    console.log("algo anda mal max" + error);
   }
 };
 
 module.exports = {
-  validarut,
+  validaRut,
+  validaContra,
+  validaLargoMax,
+  validaLargoMin,
 };

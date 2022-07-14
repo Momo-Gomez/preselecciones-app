@@ -1,4 +1,5 @@
 import "./signup.css";
+import React, { Component } from 'react';
 
 export default function signup() {
   return (
@@ -92,19 +93,9 @@ export default function signup() {
             />
           </form>
           <div className="text-left">
-            {/*  Botón  */}
-            <button
-              type="submit"
-              className="submit-button btn btn-primary
-                                            border border-white border-opacity-25
-                                            btn-gorup
-                                            mt-4 me-4
-                                            shadow rounded-pill"
-            >
-              {" "}
-              {/*Parámetros de diseño en bootstrap para el boton */}
-              Enviar
-            </button>
+            <div className="submit-btn">
+              <a href='#' className='btn btn-primary'>Enviar</a>
+            </div>
           </div>
         </div>
       </div>
