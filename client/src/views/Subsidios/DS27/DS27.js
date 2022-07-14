@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./DS27.css";
-const imag = "familiaCasa.jpg"; //Se importa la img en una variable ya que es publica
+import imagen from "../../../assets/familiaCasa.jpg";
 
 
 const DS27 = () => {
@@ -12,9 +12,13 @@ const DS27 = () => {
             <h2 className="text-primary  p-3">DS-27 Reparaciones de todo tipo</h2>
 
             <div class="card  mb-2">
-                <div class="col-md-4">
-                    <img src={imag} class="img-fluid rounded-start" alt={imag}></img>{" "}
-                </div> 
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src={imagen} class="img-fluid rounded-start" alt={imagen}></img>
+                    </div>
+                </div>
+
+            
                 <div class="card-body">
                     <h5 class="card-title">¿En qué consisten los proyectos para la vivienda?</h5>
                     <p class="card-text ">El Programa de Mejoramiento de Viviendas y Barrios busca mejorar la calidad de
@@ -23,7 +27,8 @@ const DS27 = () => {
                     <p class="card-text ">Este subsidio busca favorecer las condiciones de seguridad y habitabilidad de las
                                             familias a través de proyectos de reparación o mejoramiento de las viviendas, así
                                             como también, eliminar el hacinamiento por medio de proyectos de ampliación.</p>
-                    </div>      
+                </div>      
+                
             </div>
 
             <div class="card  mb-2">
