@@ -10,6 +10,9 @@ const home = () => {
       <div className="text-center">
         <Header/>
         <SearchBar/>
+        <h1 class="text-center p-5"></h1>
+        <h2 class="text-center p-5"></h2>
+
         <About/>
       </div>
     </div>

@@ -11,6 +11,7 @@ export default function Login() {
   return (
     <div className="container">
       <div className="signin">
+      <h1 class="text-center p-5"></h1>
         {/* Tarjeta  */}
         <div className="signin-card card mt-3">
           <span className="signin-title text-center">Ingreso</span>

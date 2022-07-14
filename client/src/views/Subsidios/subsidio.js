@@ -6,7 +6,7 @@ const subsidio = () => {
     return (
         
         <div className="container">
-            <h1 className="text-center text-bg-danger mt-5 "></h1>
+            <h1 className="text-center text-bg-danger p-3 "></h1>
             <h2 className="text-primary  p-5 ">Lista de Beneficios</h2>
 
             
