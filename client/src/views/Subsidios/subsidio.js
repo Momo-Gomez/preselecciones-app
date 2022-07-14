@@ -6,8 +6,8 @@ const subsidio = () => {
     return (
         
         <div className="container">
-            <h1 className="text-center text-bg-danger p-3 "></h1>
-            <h2 className="text-primary  p-3 ">Lista de Beneficios</h2>
+            <h1 className="text-center text-bg-danger mt-5 "></h1>
+            <h2 className="text-primary  p-5 ">Lista de Beneficios</h2>
 
             
             <div class="card mb-5 shadow bg-body rounded">

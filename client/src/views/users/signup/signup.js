@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 
 export default function signup() {
   return (
-    <div className="container">
+    <div className="container d-flex  ">
       <div className="signup">
         {/*  Tarjeta  */}
-        <div className="signup-card card mt-3">
+        <div className="signup-card card mt-3 ">
           <span className="signup-title text-center">Registro</span>
           <form className="signup-form">
             {/* Información solicitada al cliente */}
