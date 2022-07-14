@@ -52,7 +52,15 @@ const register = async (req, res) => {
 // función para ingresar
 const signin = async(req,res) => {
     try {
-    
+      //verificar usuario
+      const rut = req.params.rut;
+      const salt = await bcrypt.genSalt(10); 
+      const pass = req.params.contrasena;
+      const hashedPass = await bcrypt.hash(pass, salt);
+      const response = await pool.query("Select * from usuario where rut=$1 and contrasena=$2", [
+      rut,hashedPass,
+      ]);
+      res.json(response.rows);
     } catch (error) {
         res.status(500).json(error)
     }
