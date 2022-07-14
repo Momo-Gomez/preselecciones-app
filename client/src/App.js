@@ -11,8 +11,8 @@ import Topbar from "./components/Layouts/TopBar/topbar"; //SE IMPORTA LA TOPBAR 
 import Home from "./views/Home/home"; //SE IMPORTA HOME.JS
 import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS
 import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
-import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA SUBSIDIO.JS
-import Formulario from "./views/Formulario/formulario"; //SE IMPORTA FORMULARIO.JS
+import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA HOME.JS
+import Formulario from "./views/Formulario/formulario"; //SE IMPORTA FORMULARIO
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
             </Route>
             <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
-            {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL SUBSIDIO.JS */}
+            {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL HOME.JS */}
             </Route>{" "}
             <Route path="/subsidios/formulario" element={<Formulario />}>
               {" "}
