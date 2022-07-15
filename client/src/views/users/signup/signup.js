@@ -11,11 +11,20 @@ export default function signup() {
           <span className="signup-title text-center">Registro</span>
           <form className="signup-form">
             {/* Información solicitada al cliente */}
+
+            {/*--- RUT ---*/}
+            <label>RUT</label>
+            <input
+              type="text" pattern="[k0-9]*"
+              className="signup-input form-control"
+              placeholder="123456789"
+            />
+
             {/*--- PRIMER NOMBRE ---*/}
             <label>Primer Nombre</label>
             <input
               type="text" pattern="[A-Za-z]*"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="Alex"
             />
 
@@ -24,7 +33,7 @@ export default function signup() {
             <input 
               id="s-name"
               type="text" pattern="[A-Za-z]*"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="Cruz"
             />
 
@@ -32,7 +41,7 @@ export default function signup() {
             <label>Apellido Paterno</label>
             <input
               type="text" pattern="[A-Za-z]*"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="Pérez"
             />
 
@@ -40,34 +49,16 @@ export default function signup() {
             <label>Apellido Materno</label>
             <input
               type="text" pattern="[A-Za-z]*"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="Pérez"
             />
-
-            {/*--- RUT ---*/}
-            <label>RUT</label>
-            <div class="input-group">
-              <input
-                type="text" pattern="[0-9]*"
-                className="form-control"
-                placeholder="12345678"
-               />
-              <span class="imput-group-addon">-</span>
-              <div class="digit">
-                <input 
-                  type="char" pattern="[k0-9]{1}"
-                  className="form-control" 
-                  placeholder="9"
-                />
-               </div>
-            </div>
 
             {/*--- EMAIL ---*/}
             <label>Email</label>
             <input
              type="email"
              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-             className="form-control"
+             className="signup-input form-control"
              placeholder="ejemplo@dominio.com"
              />
 
@@ -78,7 +69,7 @@ export default function signup() {
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
               min="4"
               max="10"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="*****"
             />
 
@@ -89,7 +80,7 @@ export default function signup() {
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
               min="4"
               max="10"
-              className="form-control"
+              className="signup-input form-control"
               placeholder="*****"
             />
           </form>
