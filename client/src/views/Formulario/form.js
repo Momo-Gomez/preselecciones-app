@@ -1,4 +1,4 @@
-import "./formulario.css";
+import "./form.css";
 import React from "react";
 
 export default function Formulario() {
