@@ -28,18 +28,15 @@ const register = async (req, res) => {
 // función para ingresar
 const signin = async (req, res) => {
   try {
-    credenciales = req.body;
-    const response = await pool.query(
-      "SELECT * FROM usuario WHERE rut=$1",
-      [
-        credenciales.rut,
-      ]
-    );
-    const user = response.rows[0]
+    const credenciales = req.body;
+    const response = await pool.query("SELECT * FROM usuario WHERE rut=$1", [
+      credenciales.rut,
+    ]);
+    const user = response.rows[0];
     if (!user) {
       return res.status(400).json("Usuario no encontrado!");
     }
-    if (!await bcrypt.compare(credenciales.contraseña, user.contrasena)) {
+    if (!(await bcrypt.compare(credenciales.contraseña, user.contrasena))) {
       return res.status(400).json("Contraseña incorrecta!");
     }
     res.status(200).json(user);
@@ -49,5 +46,5 @@ const signin = async (req, res) => {
 };
 module.exports = {
   register,
-  signin
+  signin,
 };
