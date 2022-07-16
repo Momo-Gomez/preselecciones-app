@@ -13,78 +13,55 @@ export default function signup() {
             {/* Información solicitada al cliente */}
 
             {/*--- RUT ---*/}
-            <label>RUT</label>
-            <input
-              type="text" pattern="[k0-9]*"
-              className="signup-input form-control"
-              placeholder="123456789"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="RUT" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- PRIMER NOMBRE ---*/}
-            <label>Primer Nombre</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="signup-input form-control"
-              placeholder="Alex"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Primer Nombre" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- SEGUNDO NOMBRE ---*/}
-            <label>Segundo Nombre</label>
-            <input 
-              id="s-name"
-              type="text" pattern="[A-Za-z]*"
-              className="signup-input form-control"
-              placeholder="Cruz"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Segundo Nombre" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- APELLIDO PATERNO ---*/}
-            <label>Apellido Paterno</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="signup-input form-control"
-              placeholder="Pérez"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Apellido Paterno" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- APELLIDO MATERNO ---*/}
-            <label>Apellido Materno</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="signup-input form-control"
-              placeholder="Pérez"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Apellido Materno" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- EMAIL ---*/}
-            <label>Email</label>
-            <input
-             type="email"
-             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-             className="signup-input form-control"
-             placeholder="ejemplo@dominio.com"
-             />
+            <div class="input-group">
+              <input tupe="text" placeholder="Email" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- CONTRASEÑA ---*/}
-            <label>Contraseña</label>
-            <input
-              type="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
-              min="4"
-              max="10"
-              className="signup-input form-control"
-              placeholder="*****"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Contraseña" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- REVALIDACIÓN ---*/}
-            <label>Revalidar contraseña</label>
-            <input
-              type="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
-              min="4"
-              max="10"
-              className="signup-input form-control"
-              placeholder="*****"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Revalidar Contraseña" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
           </form>
           <div className="text-left">
+            {/*Botón enviar que deriva a la vista de usuario*/}
             <div className="submit-btn">
               <a href='#' className='btn btn-primary'>Enviar</a>
             </div>
