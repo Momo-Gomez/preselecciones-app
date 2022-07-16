@@ -12,7 +12,8 @@ import Home from "./views/Home/home"; //SE IMPORTA HOME.JS
 import Signin from "./views/users/signin/signin"; //SE IMPORTA SIGNIN.JS
 import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
 import Subsidio from "./views/Subsidios/subsidio"; //SE IMPORTA SUBSIDIO.JS
-import Formulario from "./views/Formulario/formulario"; //SE IMPORTA FORMULARIO.JS
+import Form from "./views/Formulario/form"; //SE IMPORTA FORM.JS
+import User from "./views/users/UserView/uv"; //SE IMPORTA UV.JS
 
 function App() {
   return (
@@ -36,11 +37,15 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNUP.JS */}
             </Route>
+            <Route path="/usuario" element={<User />}>
+              {" "}
+            {/*LLAMANDO A LA RUTA SUSUARIO DESDE EL UV.JS */}
+            </Route>{" "}
             <Route path= "/subsidios" element={<Subsidio />}>
               {" "}
             {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL SUBSIDIO.JS */}
             </Route>{" "}
-            <Route path="/subsidios/formulario" element={<Formulario />}>
+            <Route path="/subsidios/formulario" element={<Form />}>
               {" "}
             {/*LLAMANDO A LA RUTA SUBSIDIOS/FORMULARIO DESDE EL FORMULARIO.JS */}
             </Route>{" "}
