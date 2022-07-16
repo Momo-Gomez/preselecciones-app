@@ -1,13 +1,16 @@
 const { Router } = require("express");
 const router = Router();
 const {
-    register,
-    signin
+    userRegister,
+    userSignin,
+    adminSignin,
 } = require("../controllers/auth.controller");
-//REGISTRO
-router.post("/api/usuario/registro", register);
-//INGRESO
-router.post("/api/usuario/ingreso", signin);
+//REGISTRO USUARIO
+router.post("/api/usuario/registro", userRegister);
+//INGRESO USUARIO
+router.post("/api/usuario/ingreso", userSignin);
+//INGRESO ADMIN
+router.post("/api/administrador/ingreso", adminSignin);
 
 
 

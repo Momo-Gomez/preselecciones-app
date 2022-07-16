@@ -2,7 +2,7 @@ const pool = require("../database");
 const bcrypt = require("bcrypt");
 
 //función para registrar un nuevo usuario
-const register = async (req, res) => {
+const userRegister = async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const user = req.body;
@@ -25,8 +25,8 @@ const register = async (req, res) => {
   }
 };
 
-// función para ingresar
-const signin = async (req, res) => {
+// función para ingresar usuario
+const userSignin = async (req, res) => {
   try {
     const credenciales = req.body;
     const response = await pool.query("SELECT * FROM usuario WHERE rut=$1", [
@@ -44,7 +44,28 @@ const signin = async (req, res) => {
     res.status(500).json(error);
   }
 };
+// función para ingresar administrador
+const adminSignin = async (req, res) => {
+  try {
+    const credenciales = req.body;
+    const response = await pool.query(
+      "SELECT * FROM administrador WHERE correo=$1",
+      [credenciales.correo]
+    );
+    const admin = response.rows[0];
+    if (!admin) {
+      return res.status(400).json("user no encontrado!");
+    }
+    if (!(await bcrypt.compare(credenciales.contraseña, admin.contrasena))) {
+      return res.status(400).json("Contraseña incorrecta!");
+    }
+    res.status(200).json(admin);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 module.exports = {
-  register,
-  signin,
+  userRegister,
+  userSignin,
+  adminSignin,
 };
