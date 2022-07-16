@@ -44,6 +44,7 @@ const userSignin = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
 // función para ingresar administrador
 const adminSignin = async (req, res) => {
   try {
@@ -55,6 +56,15 @@ const adminSignin = async (req, res) => {
     const admin = response.rows[0];
     if (!admin) {
       return res.status(400).json("user no encontrado!");
+    }
+    if (admin.contrasena = -1) {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPass = await bcrypt.hash(credenciales.contraseña, salt);
+      admin.contrasena = hashedPass;
+      const response2 = await pool.query(
+        "UPDATE administrador SET contrasena=$1 WHERE correo=$2", //asignamos la nueva contraseña
+        [admin.contrasena, credenciales.correo]
+      );
     }
     if (!(await bcrypt.compare(credenciales.contraseña, admin.contrasena))) {
       return res.status(400).json("Contraseña incorrecta!");
