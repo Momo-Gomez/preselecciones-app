@@ -23,3 +23,8 @@
   
     background: var(--color-secondary-variant);
 }
+
+.search-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
