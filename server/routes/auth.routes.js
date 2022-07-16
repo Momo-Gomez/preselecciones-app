@@ -3,7 +3,7 @@ const router = Router();
 const {
     register,
     signin
-} = require("../controllers/user.controller");
+} = require("../controllers/auth.controller");
 //REGISTRO
 router.post("/api/usuario/registro", register);
 //INGRESO

@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 
 //Routes
 app.use(require("./routes/subsidies.routes"));
-app.use(require("./routes/user.routes"));
+app.use(require("./routes/auth.routes"));
 
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
