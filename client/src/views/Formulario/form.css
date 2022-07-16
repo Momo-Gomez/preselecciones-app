@@ -1,15 +1,19 @@
-.file-container {
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
+ .form-title {
+    margin-top: 1rem;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.req {
+    margin: 1rem;
 }
 
 .file-input {
+    margin: 0rem 1rem 1rem 1rem;
     display: grid;
     grid-template-areas: "stack";
-    width: 300px;
+    
     height: 200px;
     background-color: #eeeeee;
     border-radius: 8px;
@@ -24,7 +28,8 @@
 }
 
 .file-input > .drop-zone {
-    margin: 12px;
+    margin: 12px;    
+    padding: 12px;
     border: dashed 2px #aaaaaa;
     border-radius: 4px;
 

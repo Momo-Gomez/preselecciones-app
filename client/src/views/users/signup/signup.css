@@ -1,61 +1,72 @@
-/*  Diseño Base  */
-.signup{
-    height: calc(100vh - 3rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.signup {
+    margin: 0 auto;
 }
 
-/*  Título  */
 .signup-title{
     margin-top: 1rem;
+    margin-bottom: 2rem;
     font-size: 40px;
+    font-weight: bold;
     color: var(--color-primary);
 }
 
-/*  Tajeta  */
-.signup-card{
-    width: 30rem;
-    padding: 1rem 3rem;
-    background-color: var(--color-secondary-variant);
+.signup-card {
+    max-width: 30rem;
+    align-items: center;
+    background-color: rgba( 242, 213, 205, .5);
+    margin-bottom: 3rem;
 }
 
-/*  Forma  */
-.signup-form{
-    margin-top: 1rem;
+.input-group {
+    position: relative;
 }
-input::placeholder {
+
+/* DISEÑO DE VALIDACIÓN DE INPUTS */
+.signup-input {
+    font: inherit;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--color-primary);
+    outline: none;
+    padding-block: 5px;
+}
+
+.signup-input:invalid { 
+    color: red;
+    border-bottom: 2px solid red;
+    outline: 0;
+}
+
+:invalid::after {
+    content: "Input inválido";
+    color: red;
+}
+
+.signup-input:valid {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    outline: 0;
+}
+
+.signup-input::placeholder {
+    color: inherit;
     transition: opacity .25s;
 }
-input:focus::placeholder {
+
+.signup-input:focus::placeholder{
     opacity: 0;
 }
 
-.digit {
-    width: 3rem;
+.border-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
 }
-
-/*  Titulo de label  */
-.signup-form >label {
-    margin: 10px 0;
-    font-weight: bold;
-    color: var(--color-primary);
-    display: block;
-}
-
-/*  Validación de los inputs  */
-input:invalid {
-    animation: shake 300ms
-}
-
-@keyframes shake {
-    25% {  transform: translateX(4px);  }
-    50% {  transform: translateX(-4px); }
-    75% {  transform: translateX(4px);  }
-}
-
-/*  Botón  */
-.submit-btn{
-    margin-top: 2rem;
-    text-align: center;
+.btn-submit {
+    margin-bottom: 1rem;
 }

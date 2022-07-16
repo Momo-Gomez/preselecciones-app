@@ -1,75 +1,71 @@
-/**
- * 
- * @param {*} rut 
- * @param {*} digv 
- * @returns tiene que ser cambiados por algo que nos sirva para después 
- */
+const pool = require("../database");
+const bcrypt = require("bcrypt");
 
-//VALIDACIÓN RUT
-const validaRut = (rut, digv) => {
+//función para registrar un nuevo usuario
+const userRegister = async (req, res) => {
   try {
-    var rutdv = rut + "-" + digv;
-    if (!/^[0-9]+-[0-9kK]{1}$/.test(rutdv)) {
-      return "El rut no cumple formato";
-    }
-    if (digv == "K") digv = "k";
-
-    if (digitoV(rut) != digv) {
-      return "dígito incorrecto"
-    };
-} catch (error) {
-  console.log("algo anda mal rut " + error);
-}
-};
-//VALIDACIÓN DÍGITO VERIFICADOR LLAMADO POR EL VERIFICADOR DE RUT
-const digitoV = (rut) => {
-  try {
-    var M = 0,
-      S = 1;
-    for (; rut; rut = Math.floor(rut / 10)) {
-      S = (S + (rut % 10) * (9 - (M++ % 6))) % 11;
-    }
-    return S ? S - 1 : "K";
+    const salt = await bcrypt.genSalt(10);
+    const user = req.body;
+    const hashedPass = await bcrypt.hash(user.contraseña, salt);
+    user.contraseña = hashedPass;
+    const response = await pool.query(
+      "INSERT INTO usuario VALUES ($1,$2,$3,$4,$5,$6)",
+      [
+        user.rut,
+        user.contraseña,
+        user.pnombre,
+        user.snombre,
+        user.apellidop,
+        user.apellidom,
+      ]
+    );
+    res.status(200).json(user);
   } catch (error) {
-    console.log("algo anda mal dv " + error);
-  }
-};
-// VALIDACIÓN CONTRASEÑAS IGUALE
-const validaContra = (contrasena, rcontrasena) => {
-  try {
-    if (contrasena != rcontrasena) {
-      return "Contraseñas no coinciden";
-    }
-    return true;
-  } catch (error) {
-    console.log("algo anda mal iguales" + error);
-  }
-};
-//VALIDACIÓN LARGO MÍNIMO DE LA CONTRASEÑA
-const validaLargoMin = (contrasena) => {
-  try {
-    if (contrasena.length < 4) {
-     return "Contraseña demasiado corta, intente con mas de 4 caracteres";
-    }
-
-  } catch (error) {
-    console.log("algo anda mal min" + error);
-  }
-};
-//VALIDACIÓN LARGO MÁXIMO DE LA CONTRASEÑA
-const validaLargoMax = (contrasena) => {
-  try {
-    if (contrasena.length > 10) {
-      return "Contraseña demasiado larga, intente con menos de 11 caracteres";
-    }
-  } catch (error) {
-    console.log("algo anda mal max" + error);
+    res.status(500).json(error);
   }
 };
 
+// función para ingresar usuario
+const userSignin = async (req, res) => {
+  try {
+    const credenciales = req.body;
+    const response = await pool.query("SELECT * FROM usuario WHERE rut=$1", [
+      credenciales.rut,
+    ]);
+    const user = response.rows[0];
+    if (!user) {
+      return res.status(400).json("Usuario no encontrado!");
+    }
+    if (!(await bcrypt.compare(credenciales.contraseña, user.contrasena))) {
+      return res.status(400).json("Contraseña incorrecta!");
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+// función para ingresar administrador
+const adminSignin = async (req, res) => {
+  try {
+    const credenciales = req.body;
+    const response = await pool.query(
+      "SELECT * FROM administrador WHERE correo=$1",
+      [credenciales.correo]
+    );
+    const admin = response.rows[0];
+    if (!admin) {
+      return res.status(400).json("user no encontrado!");
+    }
+    if (!(await bcrypt.compare(credenciales.contraseña, admin.contrasena))) {
+      return res.status(400).json("Contraseña incorrecta!");
+    }
+    res.status(200).json(admin);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 module.exports = {
-  validaRut,
-  validaContra,
-  validaLargoMax,
-  validaLargoMin,
+  userRegister,
+  userSignin,
+  adminSignin,
 };

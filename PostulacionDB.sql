@@ -50,7 +50,6 @@ CREATE TABLE public.comuna (
 
 CREATE TABLE public.usuario (
 	rut varchar(20) NOT NULL,
-	dv float4 NOT NULL,
 	contrasena varchar(120) NOT NULL,
 	pnombre varchar(80) NOT NULL,
 	snombre varchar(80) NOT NULL,

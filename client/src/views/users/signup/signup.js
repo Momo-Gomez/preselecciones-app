@@ -1,7 +1,9 @@
 import "./signup.css";
 import React, { Component } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function signup() {
+  const navigate = useNavigate();
   return (
     <div className="container d-flex  ">
       <div className="signup">
@@ -11,91 +13,89 @@ export default function signup() {
           <span className="signup-title text-center">Registro</span>
           <form className="signup-form">
             {/* Información solicitada al cliente */}
-            {/*--- PRIMER NOMBRE ---*/}
-            <label>Primer Nombre</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="form-control"
-              placeholder="Alex"
-            />
-
-            {/*--- SEGUNDO NOMBRE ---*/}
-            <label>Segundo Nombre</label>
-            <input 
-              id="s-name"
-              type="text" pattern="[A-Za-z]*"
-              className="form-control"
-              placeholder="Cruz"
-            />
-
-            {/*--- APELLIDO PATERNO ---*/}
-            <label>Apellido Paterno</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="form-control"
-              placeholder="Pérez"
-            />
-
-            {/*--- APELLIDO MATERNO ---*/}
-            <label>Apellido Materno</label>
-            <input
-              type="text" pattern="[A-Za-z]*"
-              className="form-control"
-              placeholder="Pérez"
-            />
 
             {/*--- RUT ---*/}
-            <label>RUT</label>
             <div class="input-group">
-              <input
-                type="text" pattern="[0-9]*"
-                className="form-control"
-                placeholder="12345678"
-               />
-              <span class="imput-group-addon">-</span>
-              <div class="digit">
-                <input 
-                  type="char" pattern="[k0-9]{1}"
-                  className="form-control" 
-                  placeholder="9"
-                />
-               </div>
+              <input 
+                tupe="text" 
+                placeholder="RUT" 
+                class="signup-input" 
+                oninput="checkRut (this)"
+                required/>
+              <span class="border-bottom"></span>
+            </div>
+
+            {/*--- PRIMER NOMBRE ---*/}
+            <div class="input-group">
+              <input 
+                tupe="text" 
+                placeholder="Primer Nombre" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
+            </div>
+
+            {/*--- SEGUNDO NOMBRE ---*/}
+            <div class="input-group">
+              <input 
+                tupe="text" 
+                placeholder="Segundo Nombre" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
+            </div>
+
+            {/*--- APELLIDO PATERNO ---*/}
+            <div class="input-group">
+              <input 
+                tupe="text" 
+                placeholder="Apellido Paterno" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
+            </div>
+
+            {/*--- APELLIDO MATERNO ---*/}
+            <div class="input-group">
+              <input 
+                tupe="text" 
+                placeholder="Apellido Materno" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
             </div>
 
             {/*--- EMAIL ---*/}
-            <label>Email</label>
-            <input
-             type="email"
-             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-             className="form-control"
-             placeholder="ejemplo@dominio.com"
-             />
+            <div class="input-group">
+              <input 
+                tupe="email" 
+                id="email"
+                placeholder="Email" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- CONTRASEÑA ---*/}
-            <label>Contraseña</label>
-            <input
-              type="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
-              min="4"
-              max="10"
-              className="form-control"
-              placeholder="*****"
-            />
+            <div class="input-group">
+              <input 
+                tupe="text" 
+                placeholder="Contraseña" 
+                class="signup-input" 
+                required/>
+              <span class="border-bottom"></span>
+            </div>
 
             {/*--- REVALIDACIÓN ---*/}
-            <label>Revalidar contraseña</label>
-            <input
-              type="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
-              min="4"
-              max="10"
-              className="form-control"
-              placeholder="*****"
-            />
+            <div class="input-group">
+              <input tupe="text" placeholder="Revalidar Contraseña" class="signup-input" required/>
+              <span class="border-bottom"></span>
+            </div>
           </form>
           <div className="text-left">
+            {/*Botón enviar que deriva a la vista de usuario*/}
             <div className="submit-btn">
-              <a href='#' className='btn btn-primary'>Enviar</a>
+              <a onClick={() => navigate('/usuario')} href='#' className='btn-submit btn btn-primary'>Enviar</a>
             </div>
           </div>
         </div>
