@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 export default function signup() {
   const navigate = useNavigate();
   return (
-    <div className="container d-flex  ">
+    <div className="s-container">
       <div className="signup">
         <h1 class="text-center p-5"></h1>
         {/*  Tarjeta  */}
-        <div className="signup-card card mt-3 ">
+        <div className="signup-card card mt-3">
           <span className="signup-title text-center">Registro</span>
           <form className="signup-form">
             {/* Información solicitada al cliente */}

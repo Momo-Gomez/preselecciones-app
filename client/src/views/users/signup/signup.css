@@ -1,5 +1,6 @@
-.signup {
-    margin: 0 auto;
+.s-container {
+    display: flex;
+    justify-content: center;
 }
 
 .signup-title{
@@ -11,7 +12,7 @@
 }
 
 .signup-card {
-    max-width: 30rem;
+    padding: 1rem 7rem;
     align-items: center;
     background-color: rgba( 242, 213, 205, .5);
     margin-bottom: 3rem;
