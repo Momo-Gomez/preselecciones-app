@@ -17,52 +17,66 @@ export default function signup() {
             {/*--- RUT ---*/}
             <div class="input-group">
               <input 
-                tupe="text" 
-                placeholder="RUT" 
+                type="text" 
+                placeholder="Ej. 123456789" 
                 class="signup-input" 
-                oninput="checkRut (this)"
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                id="rut"
+                required
+              />
+              <label class="label">RUT</label>
             </div>
 
             {/*--- PRIMER NOMBRE ---*/}
             <div class="input-group">
               <input 
-                tupe="text" 
-                placeholder="Primer Nombre" 
+                type="text" 
+                placeholder="Ej. Alex" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                id="primer-nombre"
+                required
+              />
+              <label class="label">Primer Nombre</label>
             </div>
 
             {/*--- SEGUNDO NOMBRE ---*/}
             <div class="input-group">
               <input 
-                tupe="text" 
-                placeholder="Segundo Nombre" 
+                type="text" 
+                placeholder="Ej. Cruz" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                id="segundo-nombre"
+                required
+              />
+              <label class="label">Segundo Nombre</label>
             </div>
 
             {/*--- APELLIDO PATERNO ---*/}
             <div class="input-group">
               <input 
                 tupe="text" 
-                placeholder="Apellido Paterno" 
+                placeholder="Ej. González" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                id="apellido-paterno"
+                required
+              />
+              <label class="label">Apellido Paterno</label>
             </div>
 
             {/*--- APELLIDO MATERNO ---*/}
             <div class="input-group">
               <input 
                 tupe="text" 
-                placeholder="Apellido Materno" 
+                placeholder="Ej. Pérez" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                id="apellido-materno"
+                required
+              />
+              <label class="label">Apellido Materno</label>
             </div>
 
             {/*--- EMAIL ---*/}
@@ -72,24 +86,36 @@ export default function signup() {
                 id="email"
                 placeholder="Email" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                autoComplete="off"
+                required
+              />
+              <label class="label">Email</label>
             </div>
 
             {/*--- CONTRASEÑA ---*/}
             <div class="input-group">
               <input 
                 tupe="text" 
-                placeholder="Contraseña" 
+                placeholder="*********" 
                 class="signup-input" 
-                required/>
-              <span class="border-bottom"></span>
+                id="contraseña"
+                autoComplete="off"
+                required
+              />
+              <label class="label">Contraseña</label>
             </div>
 
             {/*--- REVALIDACIÓN ---*/}
             <div class="input-group">
-              <input tupe="text" placeholder="Revalidar Contraseña" class="signup-input" required/>
-              <span class="border-bottom"></span>
+              <input 
+                tupe="text" 
+                placeholder="*********" 
+                class="signup-input" 
+                id="rev-contraseña"
+                autoComplete="off"
+                required
+              />
+              <label class="label">Revalidación</label>
             </div>
           </form>
           <div className="text-left">
