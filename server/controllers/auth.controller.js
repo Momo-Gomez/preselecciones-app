@@ -34,7 +34,7 @@ const userSignin = async (req, res) => {
     ]);
     const user = response.rows[0];
     if (!user) {
-      return res.status(400).json("Usuario no encontrado!");
+      return res.status(400).json("rut no encontrado!");
     }
     if (!(await bcrypt.compare(credenciales.contraseña, user.contrasena))) {
       return res.status(400).json("Contraseña incorrecta!");
@@ -55,7 +55,7 @@ const adminSignin = async (req, res) => {
     );
     const admin = response.rows[0];
     if (!admin) {
-      return res.status(400).json("user no encontrado!");
+      return res.status(400).json("correo no encontrado!");
     }
     if (admin.contrasena = -1) {
       const salt = await bcrypt.genSalt(10);
