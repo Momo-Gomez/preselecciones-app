@@ -36,7 +36,7 @@ export default function Login() {
               <input
                 type="password"
                 className="signin-input"
-                placeholder="Contraseña"
+                placeholder="*********"
                 autoComplete="off"
                 id="contraseña"
               />
