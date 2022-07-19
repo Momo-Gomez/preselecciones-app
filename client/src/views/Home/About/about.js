@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div class="container">
       <section id="about">
-        <h2>Haz tus postulaciones de manera sencilla</h2>
+        <h2 class="title">Haz tus postulaciones de manera sencilla</h2>
         <h5>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
           id mi eget vestibulum. Suspendisse id mauris quis sapien aliquet
@@ -49,6 +49,7 @@ const About = () => {
               </p>
             </div>
           </div>
+          
         </section>
       </section>
     </div>

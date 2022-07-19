@@ -1,3 +1,7 @@
+.title {
+    color: var(--color-secondary);
+}
+
 .about__container {
     display: grid;
     grid-template-columns: 30% 50%;

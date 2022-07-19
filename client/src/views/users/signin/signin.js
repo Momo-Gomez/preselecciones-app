@@ -46,7 +46,7 @@ export default function Login() {
           </form>
           <div className="text-left">
             <div className="signin-btn">
-              <a onClick={() => navigate('/usuario')} href="#" className="btn btn-primary">Ingresar</a>
+              <a onClick={() => navigate('/usuario')} href="#" className="submit-btn btn btn-primary">Ingresar</a>
             </div>
           </div>
         </div>

@@ -120,7 +120,7 @@ export default function signup() {
           </form>
           <div className="text-left">
             {/*Botón enviar que deriva a la vista de usuario*/}
-            <div className="submit-btn">
+            <div className="submit">
               <a onClick={() => navigate('/usuario')} href='#' className='btn-submit btn btn-primary'>Enviar</a>
             </div>
           </div>

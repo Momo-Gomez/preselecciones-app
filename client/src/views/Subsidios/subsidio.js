@@ -21,7 +21,7 @@ const subsidio = () => {
                     <h5 class="card-title">Ampliación de la vivienda</h5>
                     <p class="card-text ">Obras destinadas aumentar la superficie de la vivienda existente para resolver problemas sanitarios o de hacinamiento. Por ejemplo, construcción de un nuevo baño, dormitorio o cocina.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button onClick={() => navigate('/subsidios/formulario')} class="btn btn-primary me-md-2" type="button">Hacer Trámite</button>
+                        <button onClick={() => navigate('/subsidios/formulario')} class="form-btn btn btn-primary me-md-2" type="button">Hacer Trámite</button>
                     </div>
                 </div>
             </div> 
@@ -33,7 +33,7 @@ const subsidio = () => {
                 <div class="card-body">
                     <p class="card-text">Este subsidio del Estado permite construir una vivienda en el terreno donde vive la familia interesada y se puede postular de manera individual o colectiva.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button onClick={() => navigate('/subsidios/formulario')} class="btn btn-primary me-md-2" type="button">Hacer Trámite</button>
+                        <button onClick={() => navigate('/subsidios/formulario')} class="form-btn btn btn-primary me-md-2" type="button">Hacer Trámite</button>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const subsidio = () => {
                 <div class="card-body">
                     <p class="card-text">Este apoyo del Estado permite a las familias que no son dueñas de una vivienda y tienen capacidad de ahorro, construir una vivienda de hasta 140 m2 en un sitio propio o en un terreno donde ya existe otra vivienda.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button onClick={() => navigate('/subsidios/formulario')} class="btn btn-primary me-md-2" type="button">Hacer Trámite</button>
+                        <button onClick={() => navigate('/subsidios/formulario')} class="form-btn btn btn-primary me-md-2" type="button">Hacer Trámite</button>
                     </div>
                 </div>
             </div> 
@@ -53,7 +53,7 @@ const subsidio = () => {
                 <div class="card-body">
                     <p class="card-text">Este apoyo del Estado permite construir una vivienda o un conjunto de ellas (casas o departamentos) sin crédito hipotecario en sectores urbanos o rurales.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button onClick={() => navigate('/subsidios/formulario')} class="btn btn-primary me-md-2" type="button">Hacer Trámite</button>
+                        <button onClick={() => navigate('/subsidios/formulario')} class="form-btn btn btn-primary me-md-2" type="button">Hacer Trámite</button>
                     </div>
                 </div>
             </div>   
