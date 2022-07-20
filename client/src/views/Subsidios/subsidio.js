@@ -7,7 +7,7 @@ const subsidio = () => {
     const navigate = useNavigate();
     return (
         
-        <div className="container">
+        <div className="s-container">
             <h1 className="text-center p-3 "></h1>
             <h3 class="text-center p-3"></h3>
             <h2 className="p-5 ">Lista de Beneficios</h2>
