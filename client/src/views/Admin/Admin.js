@@ -20,7 +20,7 @@ const Admin = () => {
       <h2 className="text-primary  p-3 ">Situación de Beneficios</h2>
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
-            <div class="card text-center"> {/* w-5 */}
+            <div class="card text-center"> 
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">There should be something written on this card, but I still don't know exactly what I should put</p>
