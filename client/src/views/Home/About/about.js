@@ -15,42 +15,36 @@ const About = () => {
           gravida.
         </h5>
 
-        <section>
-          <div className="container about__container">
-            <div className="about__list">
-              <div className="about__list-img">
-                <img src={LIST} alt="List About" />
-              </div>
+        <div class="info">
+          <div class="img-cont">
+            <div class="about-img">
+              <img src={LIST} alt="List About" />
             </div>
+          </div>
 
-            <div className="about__content">
-              <h2>Infórmate</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis
-                sapien aliquet gravida.
-              </p>
-            </div>
+          <span class="info-title">Infórmate</span>
+          <span class="info-cont">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+            id mi eget vestibulum. Suspendisse id mauris quis sapien aliquet
+            gravida.
+          </span>
+        </div>
 
-            <div className="container about__container">
-              <div className="about__list">
-                <div className="about__list-img">
-                  <img src={FORM} alt="List About" />
-                </div>
-              </div>
-            </div>
-
-            <div className="about__content">
-              <h2>Sube</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis
-                sapien aliquet gravida.
-              </p>
+        <div class="info">
+          <div class="img-cont">
+            <div class="about-img">
+              <img src={FORM} alt="List About" />
             </div>
           </div>
           
-        </section>
+          <span class="info-title">Sube</span>
+          <span class="info-cont">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
+            id mi eget vestibulum. Suspendisse id mauris quis sapien aliquet
+            gravida.
+          </span>
+        </div>
+
       </section>
     </div>
   );
