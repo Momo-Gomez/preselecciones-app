@@ -1,42 +1,78 @@
+ .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
  .form-title {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     font-size: 40px;
     font-weight: bold;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
-.req {
+.form-req {
+    color: var(--color-secondary);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-card {
+    padding: 1rem 7rem;
+    align-items: center;
+    background-color: var(--color-primary-variant);
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.upload-area {
+    margin-top: 1.5rem;
+    border: 2px solid var(--color-light);
+    border-style: dashed;
+    border-width: 4px;
+    background-color: transparent;
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-area:hover, .upload-area:focus {
+    border-color: var(--color-secondary);
+}
+
+.upload-icon {
+    fill: var(--color-secondary);
+}
+
+.upload-title {
     margin: 1rem;
+    display: block;
+    font-weight: bold;
+    color: var(--color-secondary);
 }
 
-.file-input {
-    margin: 0rem 1rem 1rem 1rem;
-    display: grid;
-    grid-template-areas: "stack";
-    
-    height: 200px;
-    background-color: #eeeeee;
-    border-radius: 8px;
+.upload-desc {
+    color: var(--color-secondary);
 }
 
-.file-input > * {
-    grid-area: stack;
+.form-footer {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.file-input > input {
-    opacity: 0;
-}
-
-.file-input > .drop-zone {
-    margin: 12px;    
-    padding: 12px;
-    border: dashed 2px #aaaaaa;
-    border-radius: 4px;
-
-    transition: margin 200ms;
-}
-
-.file-input.active > .drop-zone {
-    margin: 14px;
-    background-color: #dadada;
+.form-footer .btn {
+    margin-left: 0.75rem;
 }

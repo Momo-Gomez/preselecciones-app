@@ -1,72 +1,118 @@
-.signup {
-    margin: 0 auto;
-}
+    .s-container {
+        display: flex;
+        justify-content: center;
+    }
 
-.signup-title{
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 40px;
-    font-weight: bold;
-    color: var(--color-primary);
-}
+    .signup-title{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-size: 40px;
+        font-weight: bold;
+        color: var(--color-secondary);
+    }
 
-.signup-card {
-    max-width: 30rem;
-    align-items: center;
-    background-color: rgba( 242, 213, 205, .5);
-    margin-bottom: 3rem;
-}
+    .signup-card {
+        padding: 1rem 7rem;
+        align-items: center;
+        background-color: var(--color-primary-variant);
+    }
 
-.input-group {
-    position: relative;
-}
+    .input-group {
+        position: relative;
+        width: 280px;
+    }
 
-/* DISEÑO DE VALIDACIÓN DE INPUTS */
-.signup-input {
-    font: inherit;
-    color: var(--color-primary);
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--color-primary);
-    outline: none;
-    padding-block: 5px;
-}
+    /* DISEÑO DE VALIDACIÓN DE INPUTS */
+    .label {
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        transition: all 0.2s;
+        padding: 0 2px;
+        z-index: 1;
+        color: #b3b3b3;
+        user-select: none;
+    }
 
-.signup-input:invalid { 
-    color: red;
-    border-bottom: 2px solid red;
-    outline: 0;
-}
+    .signup-input {
+        padding: 0.5rem;
+        width:100%;
+        height: 100%;
+        border: 2px solid var(--color-secondary);
+        background: var(--color-white);
+        border-radius: 5px;
+        font-size: 18px;
+        outline: none;
+        transition: all 0.3s;
+        color: black;
+    }
 
-:invalid::after {
-    content: "Input inválido";
-    color: red;
-}
+    /*  Estilizabdo label */
+    .label::before {
+        content: '';
+        height: 5px;
+        background: transparent;
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        z-index: -1;
+    }
 
-.signup-input:valid {
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
-    outline: 0;
-}
+    .signup-input:focus{
+        border: 2px solid var(--color-secondary);
+    }
 
-.signup-input::placeholder {
-    color: inherit;
-    transition: opacity .25s;
-}
+    .signup-input:focus + .label {
+        top: -15px;
+        color: var(--color-secondary);
+        font-size: 18px;
+        text-shadow: 
+            white 1px 1px, 
+            white -1px -1px, 
+            white 2px 0,
+            white -2px 0;
+    }
 
-.signup-input:focus::placeholder{
-    opacity: 0;
-}
+    .signup-input::placeholder {
+        font-size: 16px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
 
-.border-bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: left;
-}
-.btn-submit {
-    margin-bottom: 1rem;
-}
+    .signup-input:focus::placeholder{
+        opacity: 1;
+    }
+
+    .signup-input:not(:placeholder-shown) + .label {
+        top: -10px;
+        color: var(--color-secondary);
+        font-size: 18px;
+    }
+
+
+    /* Validación de inputs */
+    .signup-input:invalid{ 
+        border: 2px solid red;
+        outline: 0;
+    }
+
+    .signup-input:invalid+ .label{
+        color: red;
+    }
+
+    :invalid::after {
+        content: "Input inválido";
+        color: red;
+    }
+
+    .signup-input:valid {
+        color: var(--color-secondary);
+        outline: 0;
+    }
+
+    .btn-submit {
+        margin-bottom: 1rem;
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+    }

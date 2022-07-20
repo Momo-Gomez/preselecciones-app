@@ -3,7 +3,8 @@ const pool = require("../database");
 const getSubsidies = async (req, res) => {
   try {
     const response = await pool.query("SELECT * FROM beneficio");
-    res.status(200).json(response.rows);
+    const subsidios = response.rows;
+    res.status(200).json(subsidios);
   } catch (error) {
     res.status(500).json(error);
   }

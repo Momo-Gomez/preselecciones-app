@@ -9,6 +9,7 @@ const Topbar = () => {
   return (
     <div className="container">
       <div className="topback">
+      <button onClick={() => navigate('/')} class="home-btn btn">Inicio</button>
         <div className='buttons'>
                   <button onClick={() => navigate('/usuario/ingreso', { replace: true })} href='#' className='btn'>
                   Ingresar

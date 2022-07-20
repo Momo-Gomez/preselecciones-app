@@ -7,7 +7,7 @@
 .card-header {
   width: 100%;
   height: auto;
-  background-color: var(--color-primary-variant);
+  background-color: var(--color-secondary-variant);
 
   position: cover;
 }
@@ -17,3 +17,7 @@
   color: var(--color-black);
 }
 
+.form-btn {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
