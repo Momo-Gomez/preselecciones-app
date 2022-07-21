@@ -26,11 +26,16 @@ const Topbar = () => {
       </div>
       
         
-                  {user ? 
-                  (                                                   //Muestra este si el usuario esta logeado
-                  <button onClick={handleLogout} className="btn buttons">       
-                    {user && "SALIR"}
+                  {user ? //Muestra este si el usuario esta logeado
+                  (
+                  <div className='buttons'>                                                  
+                  <button onClick={handleLogout} className="btn">      
+                    {user && "SALIR"}               
                   </button>
+                  <button onClick={() => user.rut ? navigate( '/usuario'):navigate( '/admin')} className="btn btn-primary">      
+                    {user && "PERFIL"}                 
+                  </button>
+                  </div>
                   ) 
                   :     //Condicional de muestra uno o el otro
                   (                                                       //Muestra este si el usuario no esta logeado

@@ -20,11 +20,18 @@ export default function Login() {
     e.preventDefault();
     dispatch( { type: "LOGIN_START" } );
     try {
-      
-      const res = await axios.post("http://localhost:5000/api/auth/usuario/ingreso",{
+      let res;
+      if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(rutRef.current.value)){
+        res = await axios.post("http://localhost:5000/api/auth/administrador/ingreso",{
+        correo: rutRef.current.value,
+        contrasena: passRef.current.value,
+      })
+      }else{
+        res = await axios.post("http://localhost:5000/api/auth/usuario/ingreso",{
         rut: rutRef.current.value,
         contrasena: passRef.current.value,
       })
+      }
       dispatch({type: "LOGIN_SUCCESS", payload: {...res.data}});
       
 

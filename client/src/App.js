@@ -37,7 +37,7 @@ function App() {
               {" "}
             </Route>{" "}
             {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
-            <Route path="/usuario/ingreso" element={user ? <User/> : <Signin />}>
+            <Route path="/usuario/ingreso" element={user ? (user.rut ? <User/> : <Admin/>): <Signin />}>
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             </Route>{" "}
@@ -45,7 +45,7 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNUP.JS */}
             </Route>
-            <Route path="/usuario" element={user ? < User/> : <Signup  />}>
+            <Route path="/usuario" element={user ? < User/> : <Home  />}>
               {" "}
             {/*LLAMANDO A LA RUTA SUSUARIO DESDE EL UV.JS */}
             </Route>{" "}
@@ -53,11 +53,11 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA Subsidios/subsidio DESDE EL SUBSIDIO.JS */}
             </Route>{" "}
-            <Route path="/usuario/formulario" element={user ? < Form/> : <Signin />}>
+            <Route path="/usuario/formulario" element={user ? (user.rut ? <Form/> : <Home/>): <Signin />}>
               {" "}
             {/*LLAMANDO A LA RUTA SUBSIDIOS/FORMULARIO DESDE EL FORMULARIO.JS */}
             </Route>{" "}
-            <Route path="/admin" element={<Admin />}>
+            <Route path="/admin" element={user ? <Admin/> : <Home />}>
               {" "}
             {/*LLAMANDO A LA RUTA ADMIN DESDE EL ADMIN.JS */}
             </Route>{" "}
