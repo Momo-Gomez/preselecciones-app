@@ -21,6 +21,8 @@
 .input-group {
     position: relative;
     width: 280px;
+    display: flex;
+    align-items: center;    
 }
 
 /* DISEÑO DE VALIDACIÓN DE INPUTS */
@@ -103,4 +105,19 @@
     color: red;
     text-transform: uppercase;
     font-style: bold;
+}
+
+
+/* Botón de olvido de contraseña*/
+.forget-btn {
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline blue;
+    transition: 0.2s;
+    justify-content: right;
+}
+
+.forget-btn:hover {
+    color: white;
+    text-decoration: underline white;
 }

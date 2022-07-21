@@ -58,6 +58,8 @@ export default function Login() {
                 ref={rutRef}
               />
               <label className="label">RUT</label>
+
+              <button class="forget-btn">¿Olvidaste tu contraseña?</button>
             </div>
 
 
