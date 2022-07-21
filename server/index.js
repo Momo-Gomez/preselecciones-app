@@ -4,6 +4,7 @@ const cors = require("cors");
 const authRoute = require("./routes/auth.routes");
 const subsRoute = require("./routes/subsidies.routes");
 const userRoute = require("./routes/user.routes");
+const filesRoute = require("./routes/files.routes");
 
 //Initialization
 const app = express();
@@ -28,7 +29,7 @@ app.use((err, req, res, next) => {
 app.use("/api/subsidies",subsRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/user", userRoute);
-
+app.use("/api/files", filesRoute);
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
 

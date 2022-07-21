@@ -4,6 +4,6 @@ const {
     changePass,
 } = require("../controllers/admin.controllers");
 //cambiar contraseña
-router.post("admin/cambiarContrasena", changePass);
+router.post("/cambiarContrasena", changePass);
 
 module.exports = router;
