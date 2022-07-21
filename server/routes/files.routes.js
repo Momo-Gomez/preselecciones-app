@@ -1,9 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const {
-  createForm,
-} = require("../controllers/files.controllers");
+const { createForm, UploadFiles } = require("../controllers/files.controllers");
 
-router.post("/upload", createForm);
+router.post("/createForm", createForm);
+router.post("/upload", UploadFiles)
 
 module.exports = router;
