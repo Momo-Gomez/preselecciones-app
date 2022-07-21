@@ -25,7 +25,17 @@ const changePass = async (req, res) => {
     res.status(500).json(error);
   }
 };
+const getUserPost = async (req, res) => {
+  try {
+    const response = await pool.query("SELECT * FROM formulario  WHERE  situacion=1");
+    const postulaciones= response.rows;
+    res.status(200).json(postulaciones);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
 module.exports = {
   changePass,
+  getUserPost,
 };
