@@ -5,58 +5,21 @@ import "./Admin.css";
 const Admin = () => {
   return (
     
-    
-    <div className="container">
-      <h1 className="text-center text-bg-danger "></h1>
-      <h2 className="text-center text-bg-transparent p-5 "></h2>
-      <div class="card mb-3">
-        
-          <div class="card-body">
-            <h5 class="card-title">Nombre Usuario</h5>
+    <div class="uv-container">
+            <h1 class="text-center p-5"></h1>
             
-          </div>
-      </div>
+            <div class="uv-card card m-3">
+              <span class="uv-info">Administrado</span>
+              <span class="uv-name">Nombre Usuario</span>
+        
+            </div>
 
-      <h2 className="text-primary  p-3 ">Situación de Beneficios</h2>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card text-center"> 
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">There should be something written on this card, but I still don't know exactly what I should put</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+            <div class="list-group shadow">
+              <h class="list-group-item list-group-item-action active text-bg-secondary" aria-current="true">Postulantes (Click sobre el nombre para descargar archivos)</h>
+              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
+              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
+              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
             </div>
-          </div>
-
-        <div class="col">
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">There should be something written on this card, but I still don't know exactly what I should put</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">There should be something written on this card, but I still don't know exactly what I should put</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">There should be something written on this card, but I still don't know exactly what I should put</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>      
     
   );
