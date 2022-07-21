@@ -1,53 +1,83 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
 import "./signin.css";
-import React from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../../context/Context";
+import  axios from "axios";
+// import { use } from "../../../../../server/routes/auth.routes"; No se para que era pero tiraba error
 
-
-const signin = () => {
-  return <p> asda</p>;
-};
 
 export default function Login() {
   const navigate = useNavigate();
+
+  const rutRef = useRef();     // var que almacenara rut del usuario para el login
+  const passRef = useRef();     // var que almacena Password para el login
+  const { dispatch, isFetching } = useContext(Context);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch( { type: "LOGIN_START" } );
+    try {
+      const res = axios.post("http://localhost:5000/api/auth/usuario/ingreso",{
+        rut: rutRef.current.value,
+        contrasena: passRef.current.value,
+      })
+      dispatch({type: "LOGIN_SUCCESS", payload: {...res.data}});
+      navigate('/usuario')
+
+
+    } catch (error) {
+      console.log(error);
+      dispatch({type: "LOGIN_FAILURE"});
+    }
+
+  };
+
   return (
     <div className="s-container">
       <div className="signin">
-      <h1 class="text-center p-5"></h1>
+        <h1 className="text-center p-5"></h1>
         {/* Tarjeta  */}
         <div className="signin-card card mt-3">
           <span className="signin-title text-center">Ingreso</span>
-          <form className="signin-form">
+          <form className="signin-form" onSubmit={handleSubmit}>
 
-            <div class="input-group">
-              <input 
-                type="text" 
-                className="signin-input" 
+            <div className="input-group">
+              <input
+                type="text"
+                className="signin-input"
                 placeholder="Ej. 123456789"
                 autoComplete="off"
                 id="rut"
+                ref={rutRef}
               />
-              <label class="label">RUT</label>
+              <label className="label">RUT</label>
             </div>
 
 
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="password"
                 className="signin-input"
                 placeholder="*********"
                 autoComplete="off"
                 id="contraseña"
+                ref={passRef}
               />
-              <label class="label">Contraseña</label>
+              <label className="label">Contraseña</label>
+            </div>
+            <div className="signin-btn center">
+              <button href="#" className="submit-btn btn btn-primary" type="submit" disabled={isFetching} >
+                Ingresar
+                </button>
             </div>
 
           </form>
           <div className="text-left">
-            <div className="signin-btn">
+            {/*<div className="signin-btn">
               <a onClick={() => navigate('/usuario')} href="#" className="submit-btn btn btn-primary">Ingresar</a>
-            </div>
+             </div>*/}
           </div>
         </div>
       </div>

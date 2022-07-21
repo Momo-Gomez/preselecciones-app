@@ -17,6 +17,7 @@ import Subsidies from "./views/Subsidios/subsidio"; //SE IMPORTA SUBSIDIO.JS
 import Form from "./views/Formulario/form"; //SE IMPORTA FORM.JS
 import User from "./views/users/UserView/uv"; //SE IMPORTA UV.JS
 
+
 function App() {
   const { user } = useContext(Context);
   return (
@@ -32,11 +33,11 @@ function App() {
               {" "}
             </Route>{" "}
             {/* LLAMANDO A LA RUTA / DESDE EL HOME.JS */}
-            <Route path="/usuario/ingreso" element={user ? < User/> : <Signin />}>
+            <Route path="/usuario/ingreso" element={user ? <User/> : <Signin />}>
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             </Route>{" "}
-            <Route path="/usuario/registro" element={user ? < User/> : <Signup  />}>
+            <Route path="/usuario/registro" element={user ? <Home/> : <Signup  />}>
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNUP.JS */}
             </Route>

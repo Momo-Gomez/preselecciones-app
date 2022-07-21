@@ -95,3 +95,6 @@
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
 }
+.center {
+    text-align: center;
+  }

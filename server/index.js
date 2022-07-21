@@ -1,6 +1,9 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const authRoute = require("./routes/auth.routes");
+const subsRoute = require("./routes/subsidies.routes");
+const userRoute = require("./routes/user.routes");
 
 //Initialization
 const app = express();
@@ -22,9 +25,9 @@ app.use((err, req, res, next) => {
 //Global Variables
 
 //Routes
-app.use(require("./routes/subsidies.routes"));
-app.use(require("./routes/auth.routes"));
-app.use(require("./routes/user.routes"));
+app.use("/api/Subsidies",subsRoute);
+app.use("/api/auth",authRoute);
+app.use("/api/user", userRoute);
 
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));

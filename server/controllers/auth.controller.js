@@ -28,17 +28,19 @@ const userRegister = async (req, res) => {
 // función para ingresar usuario
 const userSignin = async (req, res) => {
   try {
-    const credenciales = req.body;
+    const {rut, contrasena} = req.body;
     const response = await pool.query("SELECT * FROM usuario WHERE rut=$1", [
-      credenciales.rut,
+      rut,
     ]);
     const user = response.rows[0];
     if (!user) {
       return res.status(400).json("rut no encontrado!");
     }
-    if (!(await bcrypt.compare(credenciales.contraseña, user.contrasena))) {
+    console.log(user.contrasena === contrasena);
+    /*if (!(await bcrypt.compare(user.contrasena, contrasena))) {       //Descomentar esto para comprobar las encriptadas
       return res.status(400).json("Contraseña incorrecta!");
-    }
+    }*/
+
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);

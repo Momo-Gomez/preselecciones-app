@@ -6,11 +6,11 @@ const {
     adminSignin,
 } = require("../controllers/auth.controller");
 //REGISTRO USUARIO
-router.post("/api/usuario/registro", userRegister);
+router.post("/usuario/registro", userRegister);
 //INGRESO USUARIO
-router.post("/api/usuario/ingreso", userSignin);
+router.post("/usuario/ingreso", userSignin);
 //INGRESO ADMIN
-router.post("/api/administrador/ingreso", adminSignin);
+router.post("/administrador/ingreso", adminSignin);
 
 
 
