@@ -7,6 +7,7 @@ import { Context } from "./context/Context";
 //LAYOUTS
 import Header from "./components/Layouts/Header/header"; //SE IMPORTA EL HEADER FIJO
 import Topbar from "./components/Layouts/TopBar/topbar"; //SE IMPORTA LA TOPBAR FIJA
+import Footer from "./components/Layouts/Footer/footer"; //SE IMPORTA LA FOOTER FIJA
 
 //RUTAS
       //VISTAS
@@ -23,7 +24,9 @@ function App() {
   const { user } = useContext(Context);
   return (
     <Fragment>
+      <div class="app-container">
       <div className="container">
+        
         <Router>
           <div>
             <Topbar />
@@ -60,7 +63,12 @@ function App() {
             </Route>{" "}
 
           </Routes>
+
+          <div>
+            <Footer/>
+          </div>
         </Router>
+        </div>
       </div>
     </Fragment>
   );
