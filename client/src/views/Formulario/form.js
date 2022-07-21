@@ -30,29 +30,45 @@ export default function Formulario() {
           <span class="form-title text-center">Formulario</span>
 
           <div class="mb-3">
-          <label for="formFile" className="form-req">Fotocopia de Cédula de Identidad</label>
-          <input class="form-control" type="file" onChange={e=>setCedulaForm(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Fotocopia de Cédula de Identidad</label>
+            <input class="form-control" type="file" onChange={e=>setCedulaForm(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Certificado nacimiento</label>
-          <input class="form-control" type="file" onChange={e=>setCertNac(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Certificado nacimiento</label>
+            <input class="form-control" type="file" onChange={e=>setCertNac(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Certificado Estado Civil</label>
-          <input class="form-control" type="file"onChange={e=>setCertCivil(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Certificado Estado Civil</label>
+            <input class="form-control" type="file"onChange={e=>setCertCivil(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Libreta de ahorro</label>
-          <input class="form-control" type="file" onChange={e=>setLibAh(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Libreta de ahorro</label>
+            <input class="form-control" type="file" onChange={e=>setLibAh(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Certificado Registro Social de Hogares</label>
-          <input class="form-control" type="file" onChange={e=>setCertRSH(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Certificado Registro Social de Hogares</label>
+            <input class="form-control" type="file" onChange={e=>setCertRSH(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Recepcion Municipal</label>
-          <input class="form-control" type="file" onChange={e=>setRepMun(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Recepcion Municipal</label>
+            <input class="form-control" type="file" onChange={e=>setRepMun(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Certificado Avaluo Fiscal</label>
-          <input class="form-control" type="file" onChange={e=>setCertAvaluo(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Certificado Avaluo Fiscal</label>
+            <input class="form-control" type="file" onChange={e=>setCertAvaluo(e.target.value)}/>
+          </div>
 
-          <label for="formFile" className="form-req">Escritura Vivienda</label>
-          <input class="form-control" type="file" onChange={e=>setEscritura(e.target.value)}/>
+          <div class="file-group">
+            <label for="formFile" className="form-req">Escritura Vivienda</label>
+            <input class="form-control" type="file" onChange={e=>setEscritura(e.target.value)}/>
+          </div>
 
           </div>
 
