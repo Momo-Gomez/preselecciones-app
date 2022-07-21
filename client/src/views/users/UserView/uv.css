@@ -1,0 +1,59 @@
+.uv-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.uv-card {
+    width: 40rem;
+    padding: 1rem;
+    background: linear-gradient(45deg, var(--color-secondary-variant), transparent);
+    border: none;
+}
+
+.uv-name {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'Maiandra GD';
+    color: var(--color-secondary);
+}
+
+.uv-info {
+    font-size: 15px;
+    color: var(--color-black);
+}
+
+.uv-body {
+    padding: 1rem;
+}
+
+.uv-sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.uv-subsidies {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.sub-btn {
+    border-radius: 20px;
+    padding: .3rem .8rem;
+    color: var(--color-secondary);
+}
+
+.sub-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+}

@@ -16,6 +16,7 @@ import Signup from "./views/users/signup/signup"; //SE IMPORTA SIGNUP.JS
 import Subsidies from "./views/Subsidios/subsidio"; //SE IMPORTA SUBSIDIO.JS
 import Form from "./views/Formulario/form"; //SE IMPORTA FORM.JS
 import User from "./views/users/UserView/uv"; //SE IMPORTA UV.JS
+import Admin from "./views/Admin/Admin"; // Se IMPORTA ADMIN.JS
 
 
 function App() {
@@ -53,7 +54,11 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA SUBSIDIOS/FORMULARIO DESDE EL FORMULARIO.JS */}
             </Route>{" "}
-            
+            <Route path="/admin" element={<Admin />}>
+              {" "}
+            {/*LLAMANDO A LA RUTA ADMIN DESDE EL ADMIN.JS */}
+            </Route>{" "}
+
           </Routes>
         </Router>
       </div>
