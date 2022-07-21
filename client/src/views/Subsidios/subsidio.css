@@ -17,6 +17,12 @@
   position: cover;
 }
 
+.header-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card-body {
   background-color: #eeeeee;
   color: var(--color-black);

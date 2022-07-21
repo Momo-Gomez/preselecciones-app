@@ -1,3 +1,4 @@
+/*  DISEÑO BASE  */
 .uv-container {
     display: flex;
     flex-direction: column;
@@ -45,10 +46,14 @@
     color: var(--color-secondary);
 }
 
+/*  TARJETAS DE SUBSIDIO */
+
 .sub-group {
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .sub {
@@ -56,4 +61,95 @@
     padding: 1rem;
     background-color: var(--color-primary);
     border-radius: 5px;
+    flex:  1 1 100px;
+    text-align: center;
+    position: relative;
+
+    width: 250px;
+    height: 250px;
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    transition: all 400ms;
 }
+
+.sub:hover{
+    background-color: var(--color-secondary-variant);
+
+}
+
+.sub:hover .sub-name {
+    transform: translateY(-70px);
+}
+
+
+.sub-name {
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 500ms;
+}
+
+.sub-body-cont {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0px 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.sub-body {
+    font-size: 15px;
+    color: var(--color-secondary);
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 600ms;
+}
+
+.approve-btn {
+    position: absolute;
+    background-color: transparent;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #f5f5f5;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-white);
+}
+
+.sub:hover .sub-body {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* Botón de aprobación */
+.approve-btn svg {
+    margin-bottom: 6px;
+    display: none;
+    color: var(--color-white);
+}
+
+/*  Clases que se utilizan con JavaScript*/
+
+.box-selected {
+    border: green;
+    transition: all 600ms;
+}
+
+.icon-check{
+    display: block;
+}
+
+.check-selected {
+    background: green;
+    border: none;
+    transition: all 600ms;
+}
+
+
