@@ -25,7 +25,7 @@ app.use((err, req, res, next) => {
 //Global Variables
 
 //Routes
-app.use("/api/Subsidies",subsRoute);
+app.use("/api/subsidies",subsRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/user", userRoute);
 

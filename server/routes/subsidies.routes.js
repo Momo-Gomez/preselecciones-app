@@ -4,6 +4,6 @@ const {
   getSubsidies,
 } = require("../controllers/subsidies.controller");
 
-router.get("/api/beneficios", getSubsidies);
+router.get("/lista", getSubsidies);
 
 module.exports = router;

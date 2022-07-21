@@ -4,6 +4,6 @@ const {
     changePass,
 } = require("../controllers/user.controller");
 //cambiar contraseña
-router.post("/api/usuario/cambiarContrasena", changePass);
+router.post("/usuario/cambiarContrasena", changePass);
 
 module.exports = router;
