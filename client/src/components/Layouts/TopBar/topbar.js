@@ -10,11 +10,8 @@ const Topbar = () => {
   const { user, dispatch } = useContext(Context);
 
   const handleLogout = () => {
-    try {
-      dispatch({ type: "LOGOUT" });
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(user.rut);
+    dispatch({ type: "LOGOUT" });
     
   };
 

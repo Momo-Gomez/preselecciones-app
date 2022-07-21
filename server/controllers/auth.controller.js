@@ -40,7 +40,6 @@ const userSignin = async (req, res) => {
     /*if (!(await bcrypt.compare(user.contrasena, contrasena))) {       //Descomentar esto para comprobar las encriptadas
       return res.status(400).json("Contraseña incorrecta!");
     }*/
-
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);

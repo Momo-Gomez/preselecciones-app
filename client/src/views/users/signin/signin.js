@@ -19,12 +19,12 @@ export default function Login() {
     e.preventDefault();
     dispatch( { type: "LOGIN_START" } );
     try {
-      const res = axios.post("http://localhost:5000/api/auth/usuario/ingreso",{
+      const res = await axios.post("http://localhost:5000/api/auth/usuario/ingreso",{
         rut: rutRef.current.value,
         contrasena: passRef.current.value,
       })
       dispatch({type: "LOGIN_SUCCESS", payload: {...res.data}});
-      navigate('/usuario')
+      
 
 
     } catch (error) {
