@@ -8,7 +8,7 @@ export default function signup() {
   const navigate = useNavigate();
   const [rut, setRut] = useState("");
   const [contrasena, setpass] = useState("");
-  const [email, setEmail] = useState("");
+  const [correo, setEmail] = useState("");
   const [pnombre, setPNombre] = useState("");
   const [snombre, setSNombre] = useState("");
   const [apellidop, setApellidoP] = useState("");
@@ -31,6 +31,7 @@ export default function signup() {
             snombre,
             apellidop,
             apellidom,
+            correo,
           })
           dispatch({type: "LOGIN_SUCCESS", payload: {...res.data}});
 

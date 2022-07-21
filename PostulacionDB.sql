@@ -55,6 +55,7 @@ CREATE TABLE public.usuario (
 	snombre varchar(80) NOT NULL,
 	apellidop varchar(80) NOT NULL,
 	apellidom varchar(80) NOT NULL,
+	correo text NOT NULL,
 	CONSTRAINT usuario_pkey PRIMARY KEY (rut)
 );
 

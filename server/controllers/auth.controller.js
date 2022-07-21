@@ -16,7 +16,7 @@ const userRegister = async (req, res) => {
     }
     else{
       await pool.query(
-        "INSERT INTO usuario(rut,contrasena,pnombre,snombre,apellidop,apellidom) VALUES ($1,$2,$3,$4,$5,$6)",
+        "INSERT INTO usuario(rut,contrasena,pnombre,snombre,apellidop,apellidom,correo) VALUES ($1,$2,$3,$4,$5,$6,$7)",
         [
           user.rut,
           hashedPass,
@@ -24,6 +24,7 @@ const userRegister = async (req, res) => {
           user.snombre,
           user.apellidop,
           user.apellidom,
+          user.correo,
         ]
       );
 
