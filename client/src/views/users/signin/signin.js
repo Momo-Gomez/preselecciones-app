@@ -67,7 +67,6 @@ export default function Login() {
               />
               <label className="label">RUT</label>
 
-              <button class="forget-btn">¿Olvidaste tu contraseña?</button>
             </div>
 
 
@@ -81,6 +80,7 @@ export default function Login() {
                 ref={passRef}
               />
               <label className="label">Contraseña</label>
+              <button class="forget-btn">¿Olvidaste tu contraseña?</button>
             </div>
             <div className="signin-btn center">
               <button href="#" className="submit-btn btn btn-primary" type="submit" disabled={isFetching} >
