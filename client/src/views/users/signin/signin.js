@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable require-jsdoc */
 import "./signin.css";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../context/Context";
 import  axios from "axios";
@@ -14,6 +14,7 @@ export default function Login() {
   const rutRef = useRef();     // var que almacenara rut del usuario para el login
   const passRef = useRef();     // var que almacena Password para el login
   const { dispatch, isFetching } = useContext(Context);
+  const [ errorMessage, setErrorMessage ] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,6 +30,7 @@ export default function Login() {
 
     } catch (error) {
       console.log(error);
+      setErrorMessage(error.response.data);
       dispatch({type: "LOGIN_FAILURE"});
     }
 
@@ -39,8 +41,11 @@ export default function Login() {
       <div className="signin">
         <h1 className="text-center p-5"></h1>
         {/* Tarjeta  */}
+        
         <div className="signin-card card mt-3">
+          
           <span className="signin-title text-center">Ingreso</span>
+          {errorMessage && <div className="error mb-3"> {errorMessage} </div>}
           <form className="signin-form" onSubmit={handleSubmit}>
 
             <div className="input-group">

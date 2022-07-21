@@ -116,3 +116,11 @@
         background-color: var(--color-secondary);
         border-color: var(--color-secondary);
     }
+    .error{
+        color: red;
+        font-weight: bold;
+        background-color: #FADBD8;
+        border-left: red 5px solid;
+        text-align: center;
+        font-size: 15px;
+    }

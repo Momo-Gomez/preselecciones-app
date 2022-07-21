@@ -1,9 +1,61 @@
 import "./signup.css";
-import React, { Component } from 'react';
+import React, { Component, useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Context } from "../../../context/Context";
 
 export default function signup() {
   const navigate = useNavigate();
+  const [rut, setRut] = useState("");
+  const [contrasena, setpass] = useState("");
+  const [email, setEmail] = useState("");
+  const [pnombre, setPNombre] = useState("");
+  const [snombre, setSNombre] = useState("");
+  const [apellidop, setApellidoP] = useState("");
+  const [apellidom, setApellidoM] = useState("");
+  const [revPass, setRevPass] = useState("");
+  const { user, dispatch } = useContext(Context);
+
+  const [ errorMessage, setErrorMessage ] = useState("");   //Para dar mensajes de error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (contrasena === revPass){
+        if (rut.length >= 8){
+          try {
+            const res = await axios.post("http://localhost:5000/api/auth/usuario/registro", {
+            rut,
+            contrasena,
+            pnombre,
+            snombre,
+            apellidop,
+            apellidom,
+          })
+          dispatch({type: "LOGIN_SUCCESS", payload: {...res.data}});
+
+          } catch (error) {
+            setErrorMessage(error.response.data);
+          }
+          
+        }
+        else{
+          console.log("Rut invalido");
+          setErrorMessage(" Rut Invalido ");
+        }
+        
+      }
+      else{
+        console.log("contraseña de revalidacion no coincide");
+        setErrorMessage(" contraseña de revalidacion no coinciden ");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    
+    
+  }
+
   return (
     <div className="s-container">
       <div className="signup">
@@ -11,7 +63,8 @@ export default function signup() {
         {/*  Tarjeta  */}
         <div className="signup-card card mt-3">
           <span className="signup-title text-center">Registro</span>
-          <form className="signup-form">
+          {errorMessage && <div className="error mb-3"> {errorMessage} </div>}      {/*MENSAJE DE ERROR APARECE EN CASO DE QUE OCURRA */}
+          <form className="signup-form" onSubmit={handleSubmit}>
             {/* Información solicitada al cliente */}
 
             {/*--- RUT ---*/}
@@ -23,6 +76,7 @@ export default function signup() {
                 autoComplete="off"
                 id="rut"
                 required
+                onChange={e=>setRut(e.target.value)}        //Setea la var rut como el ingresado por el usuario
               />
               <label className="label">RUT</label>
             </div>
@@ -36,6 +90,7 @@ export default function signup() {
                 autoComplete="off"
                 id="primer-nombre"
                 required
+                onChange={e=>setPNombre(e.target.value)}        //Setea la var pNombre como el ingresado por el usuario
               />
               <label className="label">Primer Nombre</label>
             </div>
@@ -49,6 +104,7 @@ export default function signup() {
                 autoComplete="off"
                 id="segundo-nombre"
                 required
+                onChange={e=>setSNombre(e.target.value)}        //Setea la var sNombre como el ingresado por el usuario
               />
               <label className="label">Segundo Nombre</label>
             </div>
@@ -56,12 +112,13 @@ export default function signup() {
             {/*--- APELLIDO PATERNO ---*/}
             <div className="input-group">
               <input 
-                tupe="text" 
+                type="text" 
                 placeholder="Ej. González" 
                 class="signup-input" 
                 autoComplete="off"
                 id="apellido-paterno"
                 required
+                onChange={e=>setApellidoP(e.target.value)}        //Setea la var apellidoP como el ingresado por el usuario
               />
               <label className="label">Apellido Paterno</label>
             </div>
@@ -69,12 +126,13 @@ export default function signup() {
             {/*--- APELLIDO MATERNO ---*/}
             <div className="input-group">
               <input 
-                tupe="text" 
+                type="text" 
                 placeholder="Ej. Pérez" 
                 class="signup-input" 
                 autoComplete="off"
                 id="apellido-materno"
                 required
+                onChange={e=>setApellidoM(e.target.value)}        //Setea la var apellidoM como el ingresado por el usuario
               />
               <label className="label">Apellido Materno</label>
             </div>
@@ -82,12 +140,13 @@ export default function signup() {
             {/*--- EMAIL ---*/}
             <div className="input-group">
               <input 
-                tupe="email" 
+                type="email" 
                 id="email"
                 placeholder="Email" 
                 class="signup-input" 
                 autoComplete="off"
                 required
+                onChange={e=>setEmail(e.target.value)}        //Setea la var email como el ingresado por el usuario
               />
               <label className="label">Email</label>
             </div>
@@ -95,12 +154,13 @@ export default function signup() {
             {/*--- CONTRASEÑA ---*/}
             <div className="input-group">
               <input 
-                tupe="text" 
+                type="text" 
                 placeholder="*********" 
                 class="signup-input" 
                 id="contraseña"
                 autoComplete="off"
                 required
+                onChange={e=>setpass(e.target.value)}        //Setea la var pass como el ingresado por el usuario
               />
               <label className="label">Contraseña</label>
             </div>
@@ -108,21 +168,23 @@ export default function signup() {
             {/*--- REVALIDACIÓN ---*/}
             <div className="input-group">
               <input 
-                tupe="text" 
+                type="text" 
                 placeholder="*********" 
                 class="signup-input" 
                 id="rev-contraseña"
                 autoComplete="off"
                 required
+                onChange={e=>setRevPass(e.target.value)}        //Setea la var revpass como el ingresado por el usuario
               />
               <label className="label">Revalidación</label>
             </div>
+              <button onClick={() => navigate('/usuario')} href='#' className='submit btn-submit btn btn-primary'>Enviar</button>
           </form>
           <div className="text-left">
-            {/*Botón enviar que deriva a la vista de usuario*/}
+            {/*Botón enviar que deriva a la vista de usuario
             <div className="submit">
               <a onClick={() => navigate('/usuario')} href='#' className='btn-submit btn btn-primary'>Enviar</a>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

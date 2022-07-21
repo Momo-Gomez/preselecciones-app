@@ -98,3 +98,9 @@
 .center {
     text-align: center;
   }
+
+.error {
+    color: red;
+    text-transform: uppercase;
+    font-style: bold;
+}

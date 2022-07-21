@@ -6,19 +6,32 @@ const userRegister = async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const user = req.body;
-    const hashedPass = await bcrypt.hash(user.contraseña, salt);
-    user.contraseña = hashedPass;
-    const response = await pool.query(
-      "INSERT INTO usuario VALUES ($1,$2,$3,$4,$5,$6)",
-      [
-        user.rut,
-        user.contraseña,
-        user.pnombre,
-        user.snombre,
-        user.apellidop,
-        user.apellidom,
-      ]
-    );
+    const hashedPass = await bcrypt.hash(user.contrasena, salt);
+    user.contrasena = hashedPass;
+    const response = await pool.query("SELECT * FROM usuario WHERE rut=$1", [     //Se usa para comprobar si encuentra el rut en la bd
+      user.rut,
+    ]);
+    if (response.rows[0] && user.rut){
+      return res.status(400).json("El rut ya se encuentra registrado");
+    }
+    else{
+      await pool.query(
+        "INSERT INTO usuario(rut,contrasena,pnombre,snombre,apellidop,apellidom) VALUES ($1,$2,$3,$4,$5,$6)",
+        [
+          user.rut,
+          hashedPass,
+          user.pnombre,
+          user.snombre,
+          user.apellidop,
+          user.apellidom,
+        ]
+      );
+
+      
+      
+      
+    }
+    
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);
@@ -36,10 +49,9 @@ const userSignin = async (req, res) => {
     if (!user) {
       return res.status(400).json("rut no encontrado!");
     }
-    console.log(user.contrasena === contrasena);
-    /*if (!(await bcrypt.compare(user.contrasena, contrasena))) {       //Descomentar esto para comprobar las encriptadas
+    if (!(await bcrypt.compare(contrasena, user.contrasena))) {       //Descomentar esto para comprobar las encriptadas
       return res.status(400).json("Contraseña incorrecta!");
-    }*/
+    }
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);
