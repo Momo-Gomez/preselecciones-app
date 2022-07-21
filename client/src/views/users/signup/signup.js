@@ -20,6 +20,7 @@ export default function signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("probando");
     try {
       if (contrasena === revPass){
         if (rut.length >= 8){
@@ -179,7 +180,7 @@ export default function signup() {
               />
               <label className="label">Revalidación</label>
             </div>
-              <button onClick={() => navigate('/usuario')} href='#' className='submit btn-submit btn btn-primary'>Enviar</button>
+              <button href='#' className='submit btn-submit btn btn-primary'>Enviar</button>
           </form>
           <div className="text-left">
             {/*Botón enviar que deriva a la vista de usuario

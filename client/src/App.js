@@ -41,7 +41,7 @@ function App() {
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/LOGIN DESDE EL SIGNIN.JS */}
             </Route>{" "}
-            <Route path="/usuario/registro" element={user ? <Home/> : <Signup  />}>
+            <Route path="/usuario/registro" element={user ? <User/> : <Signup  />}>
               {" "}
             {/*LLAMANDO A LA RUTA USUARIO/SIGNUP DESDE EL SIGNUP.JS */}
             </Route>

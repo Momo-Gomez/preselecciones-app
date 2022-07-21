@@ -16,10 +16,39 @@ export default function Formulario() {
   const [certAvaluo, setCertAvaluo] = useState("");
   const [Escritura, setEscritura] = useState("");
 
-  const handleFormulario = (e) => {
+  function fileUpload(file){
+    const data = new FormData();
+    const filename = Date.now() + file.name;
+    data.append("name", filename);
+    data.append("file", file);
+    try {
+      /*res = await axios.post("http://localhost:5000/api/files/upload/", [
+
+      ])*/
+    } catch (error) {
+      
+    }
+  }
+
+  const handleFormulario = async (e) => {
     e.preventDefault();
 
-  }
+    //CONTROL DE NOMBRES ARCHIVOS
+    const data = new FormData();
+    const filename = Date.now() + cedulaForm.name;
+    try {
+      console.log(user);
+      const res = await axios.post("http://localhost:5000/api/files/createForm/", {
+        email: user.email,
+        rut: user.rut,
+        fecha: Date.now(),
+      })
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+
+    }
+};
 
   return (
     <div class="">

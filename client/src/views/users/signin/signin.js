@@ -85,7 +85,7 @@ export default function Login() {
             <div className="signin-btn center">
               <button href="#" className="submit-btn btn btn-primary" type="submit" disabled={isFetching} >
                 Ingresar
-                </button>
+              </button>
             </div>
 
           </form>
