@@ -25,6 +25,16 @@ const changePass = async (req, res) => {
     res.status(500).json(error);
   }
 };
+const listuserspostulacion = async (req, res) => {
+  try {
+    const response2 = await pool.query(
+    "select usuario.rut, pnombre, snombre, apellidop, apellidom, correo, idformulario, situacion from usuario inner join formulario on formulario.rut = usuario.rut", 
+    );
+    res.status(200).json(response2);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
 module.exports = {
-  changePass,
+  changePass, listuserspostulacion,
 };
