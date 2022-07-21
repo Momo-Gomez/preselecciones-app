@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const adminRoute = require("./routes/admin.routes");
 const authRoute = require("./routes/auth.routes");
 const subsRoute = require("./routes/subsidies.routes");
 const userRoute = require("./routes/user.routes");
@@ -30,6 +31,7 @@ app.use("/api/subsidies",subsRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/files", filesRoute);
+app.use("/api/admin", adminRoute);
 //Static Files
 app.use(express.static(path.join(__dirname, "public")));
 
