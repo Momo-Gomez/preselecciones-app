@@ -22,7 +22,7 @@ export default function UserView() {
       <div class="uv-body">
         <div class="uv-sub-header">
           <span class="uv-subsidies">Mis Subsidios</span>
-          <button class="sub-btn btn btn-primary">Postular</button>
+          <button onClick={() => navigate('/usuario/formulario')} class="sub-btn btn btn-primary">Postular</button>
         </div>
 
         {/*Tarjetas de subsidios */}
