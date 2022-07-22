@@ -72,7 +72,8 @@ export default function signup() {
             {/*--- RUT ---*/}
             <div className="input-group">
               <input 
-                type="text" 
+                type="text"
+                pattern="[k0-9]*"
                 placeholder="Ej. 123456789" 
                 class="signup-input" 
                 autoComplete="off"
@@ -86,7 +87,8 @@ export default function signup() {
             {/*--- PRIMER NOMBRE ---*/}
             <div className="input-group">
               <input 
-                type="text" 
+                type="text"
+                pattern="[A-Za-z]*"
                 placeholder="Ej. Alex" 
                 class="signup-input" 
                 autoComplete="off"
@@ -100,7 +102,8 @@ export default function signup() {
             {/*--- SEGUNDO NOMBRE ---*/}
             <div class="input-group">
               <input 
-                type="text" 
+                type="text"
+                pattern="[A-Za-z]*"
                 placeholder="Ej. Cruz" 
                 class="signup-input" 
                 autoComplete="off"
@@ -114,7 +117,8 @@ export default function signup() {
             {/*--- APELLIDO PATERNO ---*/}
             <div className="input-group">
               <input 
-                type="text" 
+                type="text"
+                pattern="[A-Za-z]*"
                 placeholder="Ej. González" 
                 class="signup-input" 
                 autoComplete="off"
@@ -128,7 +132,8 @@ export default function signup() {
             {/*--- APELLIDO MATERNO ---*/}
             <div className="input-group">
               <input 
-                type="text" 
+                type="text"
+                pattern="[A-Za-z]*"
                 placeholder="Ej. Pérez" 
                 class="signup-input" 
                 autoComplete="off"
@@ -142,7 +147,8 @@ export default function signup() {
             {/*--- EMAIL ---*/}
             <div className="input-group">
               <input 
-                type="email" 
+                type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 id="email"
                 placeholder="Email" 
                 class="signup-input" 

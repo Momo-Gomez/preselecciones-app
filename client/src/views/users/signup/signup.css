@@ -32,6 +32,7 @@
         z-index: 1;
         color: #b3b3b3;
         user-select: none;
+        font-weight: bold;
     }
 
     .signup-input {
@@ -64,14 +65,10 @@
     }
 
     .signup-input:focus + .label {
-        top: -15px;
+        top: -18px;
         color: var(--color-secondary);
         font-size: 18px;
-        text-shadow: 
-            white 1px 1px, 
-            white -1px -1px, 
-            white 2px 0,
-            white -2px 0;
+        -webkit-text-stroke: 1px white;
     }
 
     .signup-input::placeholder {
@@ -85,7 +82,7 @@
     }
 
     .signup-input:not(:placeholder-shown) + .label {
-        top: -10px;
+        top: -18px;
         color: var(--color-secondary);
         font-size: 18px;
     }
@@ -101,10 +98,10 @@
         color: red;
     }
 
-    :invalid::after {
+    /*:invalid::after {
         content: "Input inválido";
         color: red;
-    }
+    }*/
 
     .signup-input:valid {
         color: var(--color-secondary);
