@@ -3,14 +3,10 @@ const pool = require("../database");
 const createForm = async (req, res) => {
   try {
     const data = req.body;
-    const response = await pool.query("INSERT INTO formulario (idformulario,rut,fecha,situacion) VALUES (default,$1,$2,1) RETURNING idformulario ",
-    [ data.rut,
-      data.fecha,
-    ]
-    ,(err)=>{
-      res.status(500).json(err);
-    });
-    console.log(response);
+    const response = await pool.query("INSERT INTO formulario (idformulario,rut,fecha,situacion) VALUES (default,$1,default,1) RETURNING idformulario ",
+    [
+      data.rut,
+    ]);
     const idFormulario = response.rows[0];
     res.status(200).json(idFormulario);
   } catch (error) {
@@ -19,12 +15,20 @@ const createForm = async (req, res) => {
 };
 
 const UploadFiles = async(req, res) => {
+  const data = req.body;
   try {
-    
+    const response = await pool.query("INSERT INTO documento (iddocumento,ruta,idformulario) VALUES ($1,$2,$3)", [
+      data.filename,
+      data.ruta,
+      data.idformulario,
+    ])
   } catch (error) {
-    
+    console.log(error);
+    res.status(500).json(error);
   }
 }
+
+
 
 module.exports = {
   createForm,
