@@ -8,24 +8,31 @@ export default function Formulario() {
 
   const { user } = useContext(Context);     //Usuario actual logeado
 
-  const [cedulaForm, setCedulaForm] = useState("");     //Var de Recepcion de documentos
-  const [certNacForm, setCertNac] = useState("");
-  const [certCivil, setCertCivil] = useState("");
-  const [libAhForm, setLibAh] = useState("");
-  const [certRSH, setCertRSH] = useState("");
-  const [RepMun, setRepMun] = useState("");
-  const [certAvaluo, setCertAvaluo] = useState("");
-  const [Escritura, setEscritura] = useState("");
+  const [cedulaForm, setCedulaForm] = useState(null);     //Var de Recepcion de documentos
+  const [certNacForm, setCertNac] = useState(null);
+  const [certCivil, setCertCivil] = useState(null);
+  const [libAhForm, setLibAh] = useState(null);
+  const [certRSH, setCertRSH] = useState(null);
+  const [RepMun, setRepMun] = useState(null);
+  const [certAvaluo, setCertAvaluo] = useState(null);
+  const [Escritura, setEscritura] = useState(null);
 
-  function fileUpload(file){
-    const data = new FormData();
+  async function fileUpload(file, idformulario){      //Funcion para subir el documento a local insertarlo a la sql
+
+    const data = new FormData();        //El data almacenara la info del archivo
     const filename = Date.now() + file.name;
+    const rut = user.rut;
+    const ruta = "./documentos/"+rut+"/"+idformulario;      //la ruta donde se guarda el documento para la sql
+    
     data.append("name", filename);
     data.append("file", file);
     try {
-      /*res = await axios.post("http://localhost:5000/api/files/upload/", [
-
-      ])*/
+      await axios.post("/upload", data);      //Llama al upload para cargar el documento en ruta local en index.js
+      const res = await axios.post("http://localhost:5000/api/files/upload/", {
+        filename,   //nombre archivo guardado
+        ruta,               //ruta local de guardado del archivo
+        idformulario,       //id del formulario correspondiente
+      });
     } catch (error) {
       
     }
@@ -39,12 +46,34 @@ export default function Formulario() {
     const filename = Date.now() + cedulaForm.name;
       
     try {
-      const today = new Date();
-      const res = await axios.post("http://localhost:5000/api/files/createForm/", {
-        email: user.correo,
+      const res = await axios.post("http://localhost:5000/api/files/createForm/", { //Se crea el formulario correspondiente
         rut: user.rut,
-        fecha: today.toLocaleDateString(),
-      })
+      })    //Se comienzan a verificar los documentos que se subieron
+      if (cedulaForm !== null){
+        fileUpload(cedulaForm, res.data.idformulario);
+      }
+      if (certNacForm !== null){
+        fileUpload(certNacForm, res.data.idformulario);
+      }
+      if (certRSH !== null){
+        fileUpload(certRSH, res.data.idformulario);
+      }
+      if (certCivil !== null){
+        fileUpload(certCivil, res.data.idformulario);
+      }
+      if (libAhForm !== null){
+        fileUpload(libAhForm, res.data.idformulario);
+      }
+      if (RepMun!== null){
+        fileUpload(RepMun, res.data.idformulario);
+      }
+      if (certAvaluo !== null){
+        fileUpload(certAvaluo, res.data.idformulario);
+      }
+      if (Escritura !== null){
+        fileUpload(Escritura, res.data.idformulario);
+      }
+
     } catch (error) {
       console.log(error);
 

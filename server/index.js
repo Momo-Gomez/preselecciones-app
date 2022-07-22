@@ -1,11 +1,16 @@
+
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const fs = require("fs");
 const adminRoute = require("./routes/admin.routes");
 const authRoute = require("./routes/auth.routes");
 const subsRoute = require("./routes/subsidies.routes");
 const userRoute = require("./routes/user.routes");
 const filesRoute = require("./routes/files.routes");
+const multer = require("multer");
+
+
 
 //Initialization
 const app = express();
@@ -25,6 +30,35 @@ app.use((err, req, res, next) => {
   });
 });
 //Global Variables
+
+//Guardados de archivos local
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {;
+    const { idformulario, rut } = req.body; 
+    const path = 'documentos';
+    fs.mkdirSync(path, { recursive: true })
+    cb(null, 'documentos');
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name)
+    
+  },
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/api/upload", upload.any(), (req, res) => {
+  
+  const file = req.body;
+  if (!file){
+    console.log("error en el archivo");
+  }
+  else{
+    res.send(file);
+  }
+  
+});
+
 
 //Routes
 app.use("/api/subsidies",subsRoute);
