@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 
-import LIST from "../../../assets/about.jpg";
+import LIST from "../../../assets/lista-beneficios.png";
 import FORM from "../../../assets/about.jpg";
 
 const About = () => {
