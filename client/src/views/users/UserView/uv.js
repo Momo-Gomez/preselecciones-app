@@ -29,12 +29,10 @@ export default function UserView() {
 
         <div class="sub-group">
           <div class="sub sub1">
-            <span class="sub-name">Nombre Subsidio</span>
+            <span class="sub-name">DS-27 Reparaciones de todo tipo</span>
             <div class="sub-body-cont">
                 <p class="sub-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-                aliquet gravida.
+                Mejoramiento de la vivienda y ampliación de vivienda
                 </p>
             </div>
             <div class="approve-btn">
@@ -45,12 +43,11 @@ export default function UserView() {
           </div>
 
           <div class="sub sub2">
-            <span class="sub-name">Nombre Subsidio</span>
+            <span class="sub-name">DS-10 Viviendas Rurales</span>
             <div class="sub-body-cont">
                 <p class="sub-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-                aliquet gravida.
+                Permite construir una vivienda en el
+            terreno donde vive la familia interesada
                 </p>
             </div>
             <div class="approve-btn">
@@ -61,12 +58,13 @@ export default function UserView() {
           </div>
 
           <div class="sub sub3">
-            <span class="sub-name">Nombre Subsidio</span>
+            <span class="sub-name">DS-01 Vivienda rural (Sitio propio)</span>
             <div class="sub-body-cont">
                 <p class="sub-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-                aliquet gravida.
+                Permite a las familias que no son dueñas de
+            una vivienda y tienen capacidad de ahorro, construir una vivienda de
+            hasta 140 m2 en un sitio propio o en un terreno donde ya existe otra
+            vivienda.
                 </p>
             </div>
             <div class="approve-btn">
@@ -77,12 +75,12 @@ export default function UserView() {
           </div>
 
           <div class="sub sub4">
-            <span class="sub-name">Nombre Subsidio</span>
+            <span class="sub-name">DS-49 Vivienda Espacio urbano</span>
             <div class="sub-body-cont">
                 <p class="sub-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-                aliquet gravida.
+                Permite construir una vivienda o un conjunto
+            de ellas (casas o departamentos) sin crédito hipotecario en sectores
+            urbanos o rurales.
                 </p>
             </div>
             <div class="approve-btn">
