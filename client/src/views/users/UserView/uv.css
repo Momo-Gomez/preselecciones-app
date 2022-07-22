@@ -16,6 +16,7 @@
     font-weight: bold;
     font-family: 'Maiandra GD';
     color: var(--color-secondary);
+    text-transform: capitalize;
 }
 
 .uv-info {

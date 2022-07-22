@@ -92,6 +92,13 @@
     .signup-input:invalid{ 
         border: 2px solid red;
         outline: 0;
+        animation: shake 300ms
+    }
+
+    @keyframes shake {
+        25% {  transform: translateX(4px);  }
+        50% {  transform: translateX(-4px); }
+        75% {  transform: translateX(4px);  }
     }
 
     .signup-input:invalid+ .label{

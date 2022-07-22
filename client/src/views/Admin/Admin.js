@@ -1,16 +1,19 @@
 import React, { Fragment } from "react";
 import "./Admin.css";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 
 const Admin = () => {
+  const { user } = useContext(Context); // para mostrar los datos del usuario
   return (
     
     <div class="uv-container">
             <h1 class="text-center p-5"></h1>
             
             <div class="uv-card card m-3">
-              <span class="uv-info">Administrado</span>
-              <span class="uv-name">Nombre Usuario</span>
+              <span class="uv-info">Administrador</span>
+              <span class="uv-name">Bienvenido {user.pnombre} {user.apellidop}</span>
         
             </div>
 
