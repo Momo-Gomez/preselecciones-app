@@ -2,9 +2,12 @@ import "./form.css";
 import { React, useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Formulario() {
+
+  const navigate = useNavigate();
 
   const { user } = useContext(Context);     //Usuario actual logeado
 
@@ -89,46 +92,93 @@ export default function Formulario() {
           <span class="form-title text-center">Formulario</span>
 
           <div class="mb-3">
-          <div class="file-group">
-            <label for="formFile" className="form-req">Fotocopia de Cédula de Identidad</label>
-            <input class="form-control" type="file" onChange={e=>setCedulaForm(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Fotocopia de Cédula de Identidad
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setCedulaForm(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Certificado nacimiento</label>
-            <input class="form-control" type="file" onChange={e=>setCertNac(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Certificado nacimiento
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setCertNac(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Certificado Estado Civil</label>
-            <input class="form-control" type="file"onChange={e=>setCertCivil(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Certificado Estado Civil
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setCertCivil(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Libreta de ahorro</label>
-            <input class="form-control" type="file" onChange={e=>setLibAh(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Libreta de ahorro
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setLibAh(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Certificado Registro Social de Hogares</label>
-            <input class="form-control" type="file" onChange={e=>setCertRSH(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Certificado Registro Social de Hogares
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setCertRSH(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Recepcion Municipal</label>
-            <input class="form-control" type="file" onChange={e=>setRepMun(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Recepcion Municipal
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setRepMun(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Certificado Avaluo Fiscal</label>
-            <input class="form-control" type="file" onChange={e=>setCertAvaluo(e.target.value)}/>
-          </div>
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Certificado Avaluo Fiscal
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setCertAvaluo(e.target.files[0])}
+              />
+            </div>
 
-          <div class="file-group">
-            <label for="formFile" className="form-req">Escritura Vivienda</label>
-            <input class="form-control" type="file" onChange={e=>setEscritura(e.target.value)}/>
-          </div>
-
+            <div class="file-group">
+              <label for="formFile" className="form-req">
+                Escritura Vivienda
+              </label>
+              <input
+                class="form-control"
+                type="file"
+                onChange={(e) => setEscritura(e.target.files[0])}
+              />
+            </div>
           </div>
 
           {/*
@@ -147,12 +197,54 @@ export default function Formulario() {
           </button>*/}
 
           <div class="form-footer">
-            <button class="close-btn btn">Atrás</button>
-            <button class="submit-btn btn btn-primary" type="submit">Enviar</button>
+            <button onClick={() => navigate("/")} className="close-btn btn">
+              Atrás
+            </button>
+            <button
+              class="submit-btn btn btn-primary"
+              type="submit"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Enviar
+            </button>
           </div>
-
         </div>
       </form>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Archivo Subido Exitosamente!
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">El archivo fue subido exitosamente, para ser revisado por nuestros administradores.</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

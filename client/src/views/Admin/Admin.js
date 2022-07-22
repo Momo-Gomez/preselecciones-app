@@ -13,15 +13,15 @@ const Admin = () => {
             
             <div class="uv-card card m-3">
               <span class="uv-info">Administrador</span>
-              <span class="uv-name">Bienvenido {user.pnombre} {user.apellidop}</span>
+              <span class="uv-name">Bienvenido {user.pnomombre} {user.apellidop}</span>
         
             </div>
 
             <div class="list-group shadow">
               <h class="list-group-item list-group-item-action active text-bg-secondary" aria-current="true">Postulantes (Click sobre el nombre para descargar archivos)</h>
-              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
-              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
-              <button type="button" class="list-group-item list-group-item-action">Nombre/Rut</button>
+              <button type="button" class="list-group-item list-group-item-action">Bernardo Millapan/19.468.817-2</button>
+              <button type="button" class="list-group-item list-group-item-action">Juanitos Lechuga/20.342.123-5</button>
+              <button type="button" class="list-group-item list-group-item-action">Juanin juanjarri/19.343.095-2</button>
             </div>
     </div>      
     

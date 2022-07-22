@@ -2,7 +2,7 @@ import React from "react";
 import "./about.css";
 
 import LIST from "../../../assets/lista-beneficios.png";
-import FORM from "../../../assets/about.jpg";
+import FORM from "../../../assets/formulario.png";
 
 const About = () => {
   return (

@@ -16,7 +16,6 @@ const Topbar = () => {
   };
 
   return (
-    console.log(user),
     <div className="container">
       <div className="topback">
       <div className=''>
