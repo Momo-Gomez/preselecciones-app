@@ -27,7 +27,7 @@ const changePass = async (req, res) => {
 };
 const getUserPost = async (req, res) => {
   try {
-    const response = await pool.query("SELECT * FROM formulario  WHERE  situacion=1");
+    const response = await pool.query("select u.rut, u.pnombre, u.snombre,u.apellidop, u.apellidom,f.situacion  from formulario f inner join usuario u on f.rut = u.rut");
     const postulaciones= response.rows;
     res.status(200).json(postulaciones);
   } catch (error) {
