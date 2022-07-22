@@ -36,7 +36,7 @@ export default function UserView() {
                 </p>
             </div>
             <div class="approve-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg class="check" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
               </svg>
             </div>
@@ -51,7 +51,7 @@ export default function UserView() {
                 </p>
             </div>
             <div class="approve-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg class="check" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
               </svg>
             </div>
@@ -68,7 +68,7 @@ export default function UserView() {
                 </p>
             </div>
             <div class="approve-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg class="check" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
               </svg>
             </div>
@@ -84,7 +84,7 @@ export default function UserView() {
                 </p>
             </div>
             <div class="approve-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg class="check" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
               </svg>
             </div>
@@ -94,4 +94,57 @@ export default function UserView() {
       </div>
     </div>
   );
+  /*
+
+  document.querySelector(".sub1").addEventListener("click", box_selected1);
+  document.querySelector(".sub2").addEventListener("click", box_selected2);
+  document.querySelector(".sub3").addEventListener("click", box_selected3);
+  document.querySelector(".sub4").addEventListener("click", box_selected4);
+
+  //declarando variables
+
+    //sub1
+    sub1 = document.querySelector(".sub1");
+    check_bg1 = document.querySelector(".sub1 .check");
+    icon_check1 = document.querySelector(".sub1 .check");
+
+    //sub2
+    sub2 = document.querySelector(".sub2");
+    check_bg2 = document.querySelector(".sub2 .check");
+    icon_check2 = document.querySelector(".sub2 .check");
+
+    //sub3
+    sub3 = document.querySelector(".sub3");
+    check_bg3 = document.querySelector(".sub3 .check");
+    icon_check3 = document.querySelector(".sub3 .check");
+
+    //sub4
+    sub4 = document.querySelector(".sub4");
+    check_bg4 = document.querySelector(".sub4 .check");
+    icon_check4 = document.querySelector(".sub4 .check");
+
+    function box_selected1() {
+        sub1.classList.toggle('box-selected');
+        check_bg1.classList.toggle('check-selected');
+        icon_check1.classList.toggle('icon-check');
+    }
+
+    function box_selected2() {
+        sub2.classList.toggle('box-selected');
+        check_bg2.classList.toggle('check-selected');
+        icon_check2.classList.toggle('icon-check');
+    }
+
+    function box_selected3() {
+        sub3.classList.toggle('box-selected');
+        check_bg3.classList.toggle('check-selected');
+        icon_check3.classList.toggle('icon-check');
+    }
+
+    function box_selected4() {
+        sub4.classList.toggle('box-selected');
+        check_bg4.classList.toggle('check-selected');
+        icon_check4.classList.toggle('icon-check');
+    }
+    */
 }
