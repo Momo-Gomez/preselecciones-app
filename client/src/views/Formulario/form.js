@@ -17,35 +17,38 @@ export default function Formulario() {
   const [certAvaluo, setCertAvaluo] = useState(null);
   const [Escritura, setEscritura] = useState(null);
 
-    async function fileUpload(file, idformulario){
+  async function fileUpload(file, idformulario){      //Funcion para subir el documento a local insertarlo a la sql
 
-    const data = new FormData();
+    const data = new FormData();        //El data almacenara la info del archivo
     const filename = Date.now() + file.name;
     const rut = user.rut;
-    const ruta = "./documentos/"+rut+"/"+idformulario;
+    const ruta = "./documentos/"+rut+"/"+idformulario;      //la ruta donde se guarda el documento para la sql
     
     data.append("name", filename);
     data.append("file", file);
-    data.append("idformulario", idformulario);
     try {
-      await axios.post("/upload", data);
+      await axios.post("/upload", data);      //Llama al upload para cargar el documento en ruta local en index.js
       const res = await axios.post("http://localhost:5000/api/files/upload/", {
         filename,   //nombre archivo guardado
         ruta,               //ruta local de guardado del archivo
         idformulario,       //id del formulario correspondiente
       });
     } catch (error) {
-      console.log(error);
+      
     }
   }
 
   const handleFormulario = async (e) => {
     e.preventDefault();
+
+    //CONTROL DE NOMBRES ARCHIVOS
+    const data = new FormData();
+    const filename = Date.now() + cedulaForm.name;
       
     try {
-      const res = await axios.post("http://localhost:5000/api/files/createForm/", {
+      const res = await axios.post("http://localhost:5000/api/files/createForm/", { //Se crea el formulario correspondiente
         rut: user.rut,
-      })
+      })    //Se comienzan a verificar los documentos que se subieron
       if (cedulaForm !== null){
         fileUpload(cedulaForm, res.data.idformulario);
       }
@@ -73,6 +76,7 @@ export default function Formulario() {
 
     } catch (error) {
       console.log(error);
+
     }
 };
 
@@ -87,42 +91,42 @@ export default function Formulario() {
           <div class="mb-3">
           <div class="file-group">
             <label for="formFile" className="form-req">Fotocopia de Cédula de Identidad</label>
-            <input class="form-control" type="file" onChange={e=>setCedulaForm(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setCedulaForm(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Certificado nacimiento</label>
-            <input class="form-control" type="file" onChange={e=>setCertNac(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setCertNac(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Certificado Estado Civil</label>
-            <input class="form-control" type="file"onChange={e=>setCertCivil(e.target.files[0])}/>
+            <input class="form-control" type="file"onChange={e=>setCertCivil(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Libreta de ahorro</label>
-            <input class="form-control" type="file" onChange={e=>setLibAh(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setLibAh(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Certificado Registro Social de Hogares</label>
-            <input class="form-control" type="file" onChange={e=>setCertRSH(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setCertRSH(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Recepcion Municipal</label>
-            <input class="form-control" type="file" onChange={e=>setRepMun(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setRepMun(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Certificado Avaluo Fiscal</label>
-            <input class="form-control" type="file" onChange={e=>setCertAvaluo(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setCertAvaluo(e.target.value)}/>
           </div>
 
           <div class="file-group">
             <label for="formFile" className="form-req">Escritura Vivienda</label>
-            <input class="form-control" type="file" onChange={e=>setEscritura(e.target.files[0])}/>
+            <input class="form-control" type="file" onChange={e=>setEscritura(e.target.value)}/>
           </div>
 
           </div>
