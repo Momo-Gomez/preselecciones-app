@@ -1,6 +1,7 @@
 import "./form.css";
 import { React, useContext, useState } from "react";
 import { Context } from "../../context/Context";
+import axios from "axios";
 
 
 export default function Formulario() {
@@ -36,14 +37,14 @@ export default function Formulario() {
     //CONTROL DE NOMBRES ARCHIVOS
     const data = new FormData();
     const filename = Date.now() + cedulaForm.name;
+      
     try {
-      console.log(user);
+      const today = new Date();
       const res = await axios.post("http://localhost:5000/api/files/createForm/", {
-        email: user.email,
+        email: user.correo,
         rut: user.rut,
-        fecha: Date.now(),
+        fecha: today.toLocaleDateString(),
       })
-      console.log(res);
     } catch (error) {
       console.log(error);
 
