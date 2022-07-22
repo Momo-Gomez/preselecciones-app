@@ -41,6 +41,13 @@
     font-weight: bold;
 }
 
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .info-cont , .info-title {
     margin-left: 2rem;
     color: var(--color-secondary);

@@ -23,13 +23,14 @@ const About = () => {
               <img src={LIST} alt="List About" />
             </div>
           </div>
-
+          <div class="info-container">
           <span class="info-title">Infórmate</span>
           <span class="info-cont">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-            aliquet gravida.
+            Infórmate sobre los distintos subsidios habitacionales, para que
+            están destinados, como postular, que documentación necesitas, todo
+            de manera online para poder simplificar esta tarea.
           </span>
+          </div>
         </div>
 
         <div class="info">
@@ -38,13 +39,14 @@ const About = () => {
               <img src={FORM} alt="List About" />
             </div>
           </div>
-
+          <div class="info-container">
           <span class="info-title">Sube</span>
           <span class="info-cont">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            convallis id mi eget vestibulum. Suspendisse id mauris quis sapien
-            aliquet gravida.
+            Sube toda la documentación en las distintas postulaciones de manera
+            online y sencilla. Nosotros te contactaremos cuando esta sea
+            revisada y el estado de tu postulación.
           </span>
+          </div>
         </div>
       </section>
     </div>
